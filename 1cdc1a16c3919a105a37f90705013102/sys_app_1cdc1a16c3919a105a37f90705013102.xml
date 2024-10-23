@@ -32,9 +32,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-19 15:08:47</sys_created_on>
         <sys_id>1cdc1a16c3919a105a37f90705013102</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-23 09:29:08</sys_updated_on>
+        <sys_updated_on>2024-10-23 09:35:39</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
@@ -42,9 +42,9 @@
         <vendor/>
         <vendor_prefix/>
         <version>1.0.0</version>
-        <x_snc_devtools_documentation_url/>
-        <x_snc_devtools_maintainer/>
-        <x_snc_devtools_maintainer_email/>
+        <x_snc_devtools_documentation_url>https://www.wildgrube.com/servicenow-ad</x_snc_devtools_documentation_url>
+        <x_snc_devtools_maintainer>Sascha Wildgrube</x_snc_devtools_maintainer>
+        <x_snc_devtools_maintainer_email>sascha.wildgrube@servicenow.com</x_snc_devtools_maintainer_email>
         <x_snc_devtools_repo_url>https://github.com/saschawildgrube/servicenow-ad.git</x_snc_devtools_repo_url>
         <x_snc_wildgrubelab_test/>
         <x_snc_wildgrubelab_test2/>
