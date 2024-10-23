@@ -14,15 +14,17 @@
 		docapi.RenderHeader();
 	]</g2:no_escape>
 	
-	<p>Welcome to TODO: Enter the name of the app here! - created and maintained by&#160;<a href="mailto:john.doe@example.com">TODO: Enter the name of the maintainer here</a>.</p>
+	<p>Welcome to the ArtificalDeveloper app! - created and maintained by&#160;<a href="mailto:sascha.wildgrube@servicenow.com">Sascha Wildgrube</a>.</p>
 
 	<h2>Overview</h2> 
 	<g2:no_escape>$[
 		docapi.RenderDescription();
 	]</g2:no_escape>
 	
+	<!--
 	<h2>Features</h2> 
 	<p>TODO: Document the features of the app here...</p>
+	-->
 
 	<h2>Disclaimer</h2>
 	<g2:no_escape>$[docapi.RenderDisclaimer()]</g2:no_escape>	
@@ -48,8 +50,8 @@
 		]</g2:no_escape>
 		<g2:no_escape>$[
 			docapi.RenderInstallationInstructionsImportFromSourceControl(
-				'TODO: Add app name and repo url here',
-				'https://github.com/githubusername/reponame');
+				'ArtificalDeveloper',
+				'https://github.com/saschawildgrube/servicenow-ad');
 		]</g2:no_escape>		
 		<g2:no_escape>$[
 			docapi.RenderInstallationInstructionsAppInstall();
@@ -67,16 +69,16 @@
 
 	<h3>Connection and Credential Aliases</h3>
 	<g2:no_escape>$[docapi.RenderConnectionAndCredentialAliases()]</g2:no_escape>
-	
+<!--	
 	<h3>Tables</h3>
 	<g2:no_escape>$[docapi.RenderTables()]</g2:no_escape>	
-
+-->
 	<h3>UI Actions</h3>
 	<g2:no_escape>$[docapi.RenderUIActions()]</g2:no_escape>		
 	
 	<h3>Script Includes</h3>
 	<g2:no_escape>$[docapi.RenderScriptIncludes()]</g2:no_escape>
-	
+<!--	
 	<h3>UI Scripts</h3>
 	<g2:no_escape>$[docapi.RenderUIScripts()]</g2:no_escape>	
 	
@@ -91,7 +93,7 @@
 
 	<h3>Business Rules</h3>
 	<g2:no_escape>$[docapi.RenderBusinessRules()]</g2:no_escape>	
-
+-->
 	<h3>Dependencies</h3>
 	<g2:no_escape>$[docapi.RenderDependencies()]</g2:no_escape>		
 
@@ -99,7 +101,7 @@
 	<g2:no_escape>$[docapi.RenderTechnicalDebts()]</g2:no_escape>			
 	
 	<h2>License</h2>
-	<g2:no_escape>$[docapi.RenderCopyright(2024,'TODO: Add name of copyright holder')]</g2:no_escape>
+	<g2:no_escape>$[docapi.RenderCopyright(2024,'Sascha Wildgrube')]</g2:no_escape>
 	<g2:no_escape>$[docapi.RenderLicense()]</g2:no_escape>
 	
 	<h2>Release Notes</h2>
@@ -116,13 +118,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>b6d53d2bc359de105a37f907050131f9</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_ui_page_b6d53d2bc359de105a37f907050131f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-23 09:30:58</sys_updated_on>
+        <sys_updated_on>2024-10-23 09:44:05</sys_updated_on>
     </sys_ui_page>
 </record_update>
