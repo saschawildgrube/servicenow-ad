@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_snc_ad_manual.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<div style="padding-left: 20px;">
+<span style="visibility: hidden;">_CUT_HERE_</span>
+	<g2:no_escape>$[
+		var docapi = new x_snc_devtools.DocumentationAPI('x_snc_ad');
+		docapi.RenderHeader();
+	]</g2:no_escape>
+	
+	<p>Welcome to TODO: Enter the name of the app here! - created and maintained by&#160;<a href="mailto:john.doe@example.com">TODO: Enter the name of the maintainer here</a>.</p>
+
+	<h2>Overview</h2> 
+	<g2:no_escape>$[
+		docapi.RenderDescription();
+	]</g2:no_escape>
+	
+	<h2>Features</h2> 
+	<p>TODO: Document the features of the app here...</p>
+
+	<h2>Disclaimer</h2>
+	<g2:no_escape>$[docapi.RenderDisclaimer()]</g2:no_escape>	
+	
+	<h2>System Requirements</h2>
+	<ul>
+		<g2:no_escape>$[
+			docapi.RenderSystemRequirements(
+				'Washington,Xanadu',
+				true,
+				AppGetDependencies());
+		]</g2:no_escape>	
+	</ul>
+	
+	<h2>Installation</h2>
+	<ol>
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsImportFromSourceControl(
+				'DevTools',
+				'https://github.com/saschawildgrube/servicenow-devtools',
+				true,
+				'https://www.wildgrube.com/servicenow-devtools/');
+		]</g2:no_escape>
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsImportFromSourceControl(
+				'TODO: Add app name and repo url here',
+				'https://github.com/githubusername/reponame');
+		]</g2:no_escape>		
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsAppInstall();
+		]</g2:no_escape>		
+		<li>TODO: Add further steps required for installation...</li>
+	</ol>
+	
+	<h2>Reference</h2>
+
+	<h3>Configuration Options</h3>
+	<g2:no_escape>$[docapi.RenderProperties()]</g2:no_escape>
+	
+	<h3>Roles</h3>
+	<g2:no_escape>$[docapi.RenderRoles()]</g2:no_escape>		
+
+	<h3>Connection and Credential Aliases</h3>
+	<g2:no_escape>$[docapi.RenderConnectionAndCredentialAliases()]</g2:no_escape>
+	
+	<h3>Tables</h3>
+	<g2:no_escape>$[docapi.RenderTables()]</g2:no_escape>	
+
+	<h3>UI Actions</h3>
+	<g2:no_escape>$[docapi.RenderUIActions()]</g2:no_escape>		
+	
+	<h3>Script Includes</h3>
+	<g2:no_escape>$[docapi.RenderScriptIncludes()]</g2:no_escape>
+	
+	<h3>UI Scripts</h3>
+	<g2:no_escape>$[docapi.RenderUIScripts()]</g2:no_escape>	
+	
+	<h3>REST APIs</h3>
+	<g2:no_escape>$[docapi.RenderRestApis()]</g2:no_escape>		
+	
+	<h3>Test step configurations</h3>
+	<g2:no_escape>$[docapi.RenderTestStepConfigurations()]</g2:no_escape>
+	
+	<h3>Extension Points</h3>
+	<g2:no_escape>$[docapi.RenderExtensionPoints()]</g2:no_escape>		
+
+	<h3>Business Rules</h3>
+	<g2:no_escape>$[docapi.RenderBusinessRules()]</g2:no_escape>	
+
+	<h3>Dependencies</h3>
+	<g2:no_escape>$[docapi.RenderDependencies()]</g2:no_escape>		
+
+	<h3>Technical Debts</h3>
+	<g2:no_escape>$[docapi.RenderTechnicalDebts()]</g2:no_escape>			
+	
+	<h2>License</h2>
+	<g2:no_escape>$[docapi.RenderCopyright(2024,'TODO: Add name of copyright holder')]</g2:no_escape>
+	<g2:no_escape>$[docapi.RenderLicense()]</g2:no_escape>
+	
+	<h2>Release Notes</h2>
+
+	<h3>1.0.0 - TODO</h3>
+	<p>First baselined version</p>
+
+<span style="visibility: hidden;">_CUT_HERE_</span>
+</div>
+</j:jelly>]]></html>
+        <name>manual</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-23 09:30:58</sys_created_on>
+        <sys_id>b6d53d2bc359de105a37f907050131f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>manual</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>sys_ui_page_b6d53d2bc359de105a37f907050131f9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-23 09:30:58</sys_updated_on>
+    </sys_ui_page>
+</record_update>
