@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Checks if all documented dependencies of the application are installed in a compatible version
+</description>
+        <display_name>DevTools - Check app dependencies</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="DevTools - Check app dependencies">e4b8e71e1bbb5d105b76777d8b4bcb35</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-23 09:39:53</sys_created_on>
+        <sys_id>24e7f5ebc359de105a37f907050131c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DevTools - Check app dependencies</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>sys_atf_step_24e7f5ebc359de105a37f907050131c6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-23 09:39:53</sys_updated_on>
+        <table/>
+        <test display_value="ArtificialDeveloper - Installation">fed57d2bc359de105a37f9070501310e</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=24e7f5ebc359de105a37f907050131c6"/>
+</record_update>
