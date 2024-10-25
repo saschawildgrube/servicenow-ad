@@ -12,7 +12,9 @@
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
 	var StringFormat = x_snc_devtools.StringFormat;
-		
+	var RunTest = x_snc_devtools.RunTest;
+	var GetTestRecord = x_snc_devtools.GetTestRecord;
+			
 	var progresstracker = new x_snc_devtools.ProgressTrackerAPI();
 	progresstracker.Start();
 	progresstracker.SetPercentageProgress(0);
@@ -35,10 +37,17 @@
 	{
 		nMaxIteration = 10;
 	}
-
 	if (nMaxIteration > 20)
 	{
 		nMaxIteration = 20;
+	}
+
+
+	// Identify Test
+	var grTest = GetTestRecord(grRecord);
+	if (IsValidRecord(grTest) == false)
+	{
+		return false;
 	}
 
 
@@ -51,8 +60,9 @@
 		x_snc_devtools.Sleep(1);
 
 		// Run Test
+		RunTest(grTest);
 
-		// Did the test pass
+		// Did the test pass?
 			// stop
 
 		// Create prompt
@@ -86,13 +96,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:47:38</sys_created_on>
         <sys_id>b949fd2fc359de105a37f90705013157</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>TestDrivenCodeGeneration</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_b949fd2fc359de105a37f90705013157</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-25 12:22:39</sys_updated_on>
+        <sys_updated_on>2024-10-25 15:45:18</sys_updated_on>
     </sys_script_include>
 </record_update>
