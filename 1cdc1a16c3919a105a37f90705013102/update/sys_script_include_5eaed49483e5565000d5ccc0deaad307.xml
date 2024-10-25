@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_ad.ArtificialDeveloperClientAPI</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Exposes Ajax end-points to clients scripts.</description>
+        <name>ArtificialDeveloperClientAPI</name>
+        <script><![CDATA[var ArtificialDeveloperClientAPI = Class.create();
+ArtificialDeveloperClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
+{
+	start: function()
+	{
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var GetRecord = x_snc_devtools.GetRecord;
+		var IsValidRecord = x_snc_devtools.IsValidRecord;
+		var StartWorker = x_snc_devtools.StartWorker;
+		
+		if (gs.hasRole('x_snc_ad.developer') == false)
+		{
+			LogError('ArtificialDeveloperClientAPI.start(): TestDrivenCodeGeneration: User does not have the x_snc_ad.developer role');
+			return '';
+		}
+
+		var strWorkerId = '';
+		var strTrackerSourceTable = '';
+		var strTrackerType = '';
+
+		var strCommand = GetStringValue(this.getParameter("sysparm_ajax_processor_command"));
+
+		if (strCommand == 'tdcg')
+		{
+			Log('ArtificialDeveloperClientAPI: start(): 3');
+			var strRecordClassName = GetStringValue(this.getParameter("sysparm_ajax_processor_sys_class_name"));
+			if (strRecordClassName == '')
+			{
+				LogError('ArtificialDeveloperClientAPI.start(): TestDrivenCodeGeneration: No record class name specified.');
+				return '';
+			}
+			
+			var strRecordSysId = GetStringValue(this.getParameter("sysparm_ajax_processor_sys_id"));
+			if (strRecordSysId == '')
+			{
+				LogError('ArtificialDeveloperClientAPI.start(): TestDrivenCodeGeneration: no record sys id specified.');
+				return '';
+			}
+
+			var grRecord = GetRecord(strRecordClassName,strRecordSysId);
+			if (IsValidRecord(grRecord) == false)
+			{
+				LogError('ArtificialDeveloperClientAPI.start(): TestDrivenCodeGeneration: Record not found.');
+				return '';
+			}
+
+			var strTrackerSourceTable = strRecordClassName;
+			var strTrackerType = 'ad_tdcg';
+	
+			var strProgressName = 'Generating code in '+grRecord.getDisplayValue();
+
+			var params = {};
+			params['grRecord'] = grRecord;
+			params['nMaxIterations'] = 10;
+
+			strWorkerId = StartWorker(
+				strProgressName,
+				'x_snc_ad.ArtificialDeveloperWorkerAPI',
+				'TestDrivenCodeGeneration',
+				params);
+		}
+		else
+		{
+			LogError('ArtificialDeveloperClientAPI.start(): Unknown command!');
+		}
+
+		
+		if (strWorkerId == '')
+		{
+			return '';
+		}
+
+		var nCountDown = 1000;
+		while (nCountDown > 0)
+		{
+			var grTracker = new GlideRecord('sys_execution_tracker');
+			grTracker.orderByDesc('sys_created_on');
+			grTracker.addQuery('source_table','=',strTrackerSourceTable);
+			grTracker.addQuery('type','=',strTrackerType);
+			grTracker.addQuery('state', 'IN', '0,1');
+			grTracker.query();
+			if (grTracker.next())
+			{
+				return GetStringValue(grTracker.sys_id);
+			}
+			nCountDown--;
+		}
+		
+		return strWorkerId;
+	},
+			
+
+    type: 'ArtificialDeveloperClientAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-25 11:12:52</sys_created_on>
+        <sys_id>5eaed49483e5565000d5ccc0deaad307</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>ArtificialDeveloperClientAPI</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>sys_script_include_5eaed49483e5565000d5ccc0deaad307</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-25 12:20:18</sys_updated_on>
+    </sys_script_include>
+</record_update>

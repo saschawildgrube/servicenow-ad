@@ -9,19 +9,90 @@
         <name>TestDrivenCodeGeneration</name>
         <script><![CDATA[function TestDrivenCodeGeneration(grRecord, nMaxIterations)
 {
-	return false;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+	var StringFormat = x_snc_devtools.StringFormat;
+		
+	var progresstracker = new x_snc_devtools.ProgressTrackerAPI();
+	progresstracker.Start();
+	progresstracker.SetPercentageProgress(0);
+
+	if (IsValidRecord(grRecord) == false)
+	{
+		progresstracker.SetResult(null,false,'Invalid Record specified');
+		return false;
+
+	}
+
+	if (IsTestDrivenCodeGenerationAvailable(grRecord) == false)
+	{
+		progresstracker.SetResult(null,false,'Test-Driven Code Generation is not available for the record.');
+		return false;
+	}
+
+	nMaxIteration = GetIntegerValue(nMaxIterations);
+	if (nMaxIteration == 0)
+	{
+		nMaxIteration = 10;
+	}
+
+	if (nMaxIteration > 20)
+	{
+		nMaxIteration = 20;
+	}
+
+
+	var nIteration = 0;
+
+	while (nIteration < nMaxIterations)
+	{
+		progresstracker.SetText(StringFormat('Iteration {0} of {1}.',nIteration,nMaxIterations));		
+
+		x_snc_devtools.Sleep(1);
+
+		// Run Test
+
+		// Did the test pass
+			// stop
+
+		// Create prompt
+			// Function descrption
+			// Test implementation
+			// Test result
+			// current code
+			// make it so!
+
+		// Send prompt to LLM
+
+		// Store the new code to the record
+
+		var nPercentage = 100 * (nIteration + 1) / nMaxIterations;
+		progresstracker.SetPercentageProgress(nPercentage);
+
+		nIteration++;
+	}
+
+
+
+
+	progresstracker.SetPercentageProgress(100);
+
+	progresstracker.SetResult(null,true,'TODO: Test-Driven Code Generation. ENDED');
+	Log('TestDrivenCodeGeneration: END');
+
+	return true;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:47:38</sys_created_on>
         <sys_id>b949fd2fc359de105a37f90705013157</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>TestDrivenCodeGeneration</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_b949fd2fc359de105a37f90705013157</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-23 09:47:38</sys_updated_on>
+        <sys_updated_on>2024-10-25 12:22:39</sys_updated_on>
     </sys_script_include>
 </record_update>

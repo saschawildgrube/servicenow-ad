@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Initiates the Test-Driven Code Generation process for the given record.</description>
+        <global>true</global>
+        <ignore_in_now_experience>false</ignore_in_now_experience>
+        <name>x_snc_ad.TestDrivenCodeGeneration</name>
+        <script><![CDATA[function TestDrivenCodeGeneration(strRecordClassName, strRecordSysId)
+{
+	var strTitle = 'Artificial Developer';
+	//DoModalMessage(strTitle,strRecordClassName + ': '+ strRecordSysId);
+
+	StateStart();
+
+
+	function OnExecutionComplete(dialog,tracker)
+	{
+		var buttonViewResults = GetElementById('sysparm_button_view_results');
+		if (buttonViewResults)
+		{
+			buttonViewResults.style.display = "none";
+		}
+	
+		var buttonClose = GetElementById('sysparm_button_close');
+        if (buttonClose)
+		{
+            buttonClose.on('click', function()
+				{
+					StateEnd();
+				});
+        }
+	}
+	
+	function OnExecutionFailed(dialog)
+	{
+		StateError('Test-Driven Code Generation failed');
+	}
+	
+	function OnStatusUpdate(dialog)
+	{
+	}
+
+	function StateError(strErrorMessage)
+	{
+		DoModalMessage(
+			strTitle,
+			'ERROR: '+strErrorMessage,
+			StateEnd);		
+		return;	
+	}	
+
+	function StateEnd()
+	{
+		RedirectToRecord(strRecordClassName,strRecordSysId,'',false,{});
+	}
+
+	function StateStart()
+	{
+
+/*
+		if (bUserConfirmation == false)
+		{
+			StateUserConfirmation();
+			return;
+		}
+*/
+		DoModalProgress(
+			strTitle,
+			'Performing Test-Driven Code Generation',
+			'x_snc_ad.ArtificialDeveloperClientAPI',
+			{
+				command: 'tdcg',
+				sys_class_name: strRecordClassName,
+				sys_id: strRecordSysId
+			},
+			{
+				close:
+				{
+					title: 'View Results'
+				}
+			},
+			{
+				callbackOnExecutionComplete: OnExecutionComplete,
+				callbackOnExecutionFailed: OnExecutionFailed,
+				callbackOnStatusUpdate: OnStatusUpdate,
+			});
+	}
+
+
+}]]></script>
+        <script_name>TestDrivenCodeGeneration</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-25 10:50:29</sys_created_on>
+        <sys_id>3c8a5c1083e5565000d5ccc0deaad3b1</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>x_snc_ad.TestDrivenCodeGeneration</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>sys_ui_script_3c8a5c1083e5565000d5ccc0deaad3b1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-25 12:24:22</sys_updated_on>
+        <ui_type>0</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+        <x_snc_devtools_global>true</x_snc_devtools_global>
+    </sys_ui_script>
+</record_update>
