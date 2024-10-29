@@ -24,19 +24,27 @@
 
 			
 	var progresstracker = new x_snc_devtools.ProgressTrackerAPI();
+
+	function Error(strMessage)
+	{
+		progresstracker.SetResult(null,false,strMessage);
+		LogError(strMessage);
+	} 
+	
+
 	progresstracker.Start();
 	progresstracker.SetPercentageProgress(0);
 
 	if (IsValidRecord(grRecord) == false)
 	{
-		progresstracker.SetResult(null,false,'Invalid Record specified');
+		Error('Invalid Record specified');
 		return false;
 
 	}
 
 	if (IsTestDrivenCodeGenerationAvailable(grRecord) == false)
 	{
-		progresstracker.SetResult(null,false,'Test-Driven Code Generation is not available for the record.');
+		Error('Test-Driven Code Generation is not available for the record.');
 		return false;
 	}
 
@@ -55,7 +63,7 @@
 	var grTest = GetTestRecord(grRecord);
 	if (IsValidRecord(grTest) == false)
 	{
-		progresstracker.SetResult(null,false,'Could not identify test.');
+		Error('Could not identify test.');
 		return false;
 	}
 
@@ -67,7 +75,7 @@
 	grTestStep.query();
 	if (grTestStep.next() == false)
 	{
-		progresstracker.SetResult(null,false,'Could not find first test step.');
+		Error('Could not find first test step.');
 		return false;
 	}
 	var grVariable = new GlideRecord('sys_variable_value');
@@ -76,14 +84,14 @@
 	grVariable.query();
 	if (grVariable.next() == false)
 	{
-		progresstracker.SetResult(null,false,'Could not load test code.');
+		Error('Could not load test code.');
 		return false;
 	}
 	var strTestCode = GetStringValue(grVariable.value);
 
 	if (strTestCode == '')
 	{
-		progresstracker.SetResult(null,false,'Test code is empty.');
+		Error('Test code is empty.');
 		return false;
 	}
 
@@ -98,7 +106,7 @@
 
 		if (grTestResult == false)
 		{
-			progresstracker.SetResult(null,false,'Test Execution failed');
+			Error('Test Execution failed');
 			return false;
 		}
 
@@ -154,7 +162,7 @@
 		var strResponse = Prompt(strPrompt);
 		if (strResponse == false)
 		{
-			progresstracker.SetResult(null,false,'Failed to send prompt to the LLM.');
+			Error('Failed to send prompt to the LLM.');
 			return false;
 		}
 
@@ -162,7 +170,7 @@
 
 		if (strCode == strResponse)
 		{
-			progresstracker.SetResult(null,false,'The LLM did not make any change to the code.');
+			Error('The LLM did not make any change to the code.');
 			return false;	
 		}
 
@@ -180,7 +188,7 @@
 
 	progresstracker.SetPercentageProgress(100);
 
-	progresstracker.SetResult(null,false,'Maximum iterations used, Test-Driven Code Generation was NOT successful.');
+	Error('Maximum iterations used, Test-Driven Code Generation was NOT successful.');
 
 	return true;
 }]]></script>
@@ -188,14 +196,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:47:38</sys_created_on>
         <sys_id>b949fd2fc359de105a37f90705013157</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>TestDrivenCodeGeneration</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_b949fd2fc359de105a37f90705013157</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-29 08:35:06</sys_updated_on>
+        <sys_updated_on>2024-10-29 08:40:03</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>b949fd2fc359de105a37f90705013157</id>
