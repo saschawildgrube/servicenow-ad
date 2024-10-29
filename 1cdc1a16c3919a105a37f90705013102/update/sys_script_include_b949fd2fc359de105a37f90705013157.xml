@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Initiates the test-driven code generation loop based on the given record and performs the loop as often as it takes up to the maximum amount of iterations.</description>
+        <mobile_callable>false</mobile_callable>
         <name>TestDrivenCodeGeneration</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function TestDrivenCodeGeneration(grRecord, nMaxIterations)
 {
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
@@ -17,6 +19,8 @@
 	var GetValue = x_snc_devtools.GetValue;
 	var Prompt = x_snc_devtools.Prompt;
 	var GetStringValue = x_snc_devtools.GetStringValue;
+	var RecordGetValue = x_snc_devtools.RecordGetValue;
+	var RecordSetValue = x_snc_devtools.RecordSetValue;
 
 			
 	var progresstracker = new x_snc_devtools.ProgressTrackerAPI();
@@ -83,9 +87,9 @@
 		return false;
 	}
 
-	var nIteration = 0;
+	var nIteration = 1;
 
-	while (nIteration < nMaxIterations)
+	while (nIteration <= nMaxIterations)
 	{
 		progresstracker.SetText(StringFormat('Iteration {0} of {1}.',nIteration,nMaxIterations));		
 
@@ -106,33 +110,46 @@
 			return true;
 		}
 
+		// Get test output
+		var strTestOutput = grTestResult.output;
+
+		// Get Source Code
+		var strCode = RecordGetValue('sys_script_include',grRecord.sys_id,'script');
+
+
 		// Create prompt
 		var strPrompt = '';
-
-		strPrompt += 'You are an experienced ServiceNow Pro-Code developer. You are tasked to implement a function. You are practicing Test-Driven Development.\n';
-
+		strPrompt += 'You are an experienced ServiceNow Pro-Code developer.\n';
+		strPrompt += 'You are tasked to implement a function. You are practicing Test-Driven Development.\n';
 		strPrompt += 'The function is contained in a Script Include.';
 		strPrompt += 'The function is described as follows:\n';
+		strPrompt += 'BEGIN\n';
 		strPrompt += grRecord.description;
+		strPrompt += 'END\n';
 		strPrompt += '\n\n\n';
 		strPrompt += 'The current source code of the function is this:\n';
-		strPrompt += grRecord.script;
+		strPrompt += 'BEGIN\n';
+		strPrompt += strCode;
+		strPrompt += 'END\n';
 		strPrompt += '\n\n\n';
 		strPrompt += 'The following test code must pass:\n';
+		strPrompt += 'BEGIN\n';
 		strPrompt += strTestCode;
+		strPrompt += 'END\n';
 		strPrompt += '\n\n\n';
 		strPrompt += 'This is the log output of the last test run:\n';
-		strPrompt += grTestResult.output;
+		strPrompt += 'BEGIN\n';
+		strPrompt += strTestOutput; 
+		strPrompt += 'END\n';
+		strPrompt += '\n\n\n';
+		strPrompt += 'If any of the test cases FAILED the code is not yet fit-for-purpose and hence must be changed.';
 		strPrompt += '\n\n\n';
 		strPrompt += 'Your task is to modify the code so that the function passes the test. The function body, its name, the parameters must stay exactly as it is.\n';
 		strPrompt += 'Your answer must consist of the source code only, starting with the keyword "funtion" and end with the closing curly bracket.\n';
 		strPrompt += 'Thank you and good luck!';
 
-		Log(strPrompt);
+		Debug(strPrompt);
 		
-
-
-
 		// Send prompt to LLM
 		var strResponse = Prompt(strPrompt);
 		if (strResponse == false)
@@ -141,11 +158,18 @@
 			return false;
 		}
 
-		// Store the new code to the record
-		grRecord.script = strResponse;
-		grRecord.update();
+		Debug(strResponse);
 
-		var nPercentage = 100 * (nIteration + 1) / nMaxIterations;
+		if (strCode == strResponse)
+		{
+			progresstracker.SetResult(null,false,'The LLM did not make any change to the code.');
+			return false;	
+		}
+
+		// Store the new code to the record
+		RecordSetValue('sys_script_include',grRecord.sys_id,'script',strResponse);
+
+		var nPercentage = 100 * (nIteration) / nMaxIterations;
 		progresstracker.SetPercentageProgress(nPercentage);
 
 		nIteration++;
@@ -164,13 +188,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:47:38</sys_created_on>
         <sys_id>b949fd2fc359de105a37f90705013157</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>TestDrivenCodeGeneration</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_b949fd2fc359de105a37f90705013157</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-29 06:52:38</sys_updated_on>
+        <sys_updated_on>2024-10-29 08:35:06</sys_updated_on>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>b949fd2fc359de105a37f90705013157</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-29 08:12:33</sys_created_on>
+        <sys_id>e07d5ce11b6d92108a99b8449b4bcb6f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-29 08:12:33</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>
