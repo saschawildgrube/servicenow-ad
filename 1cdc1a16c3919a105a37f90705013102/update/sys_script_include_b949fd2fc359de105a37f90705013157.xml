@@ -14,6 +14,7 @@
 	var StringFormat = x_snc_devtools.StringFormat;
 	var RunTest = x_snc_devtools.RunTest;
 	var GetTestRecord = x_snc_devtools.GetTestRecord;
+	var GetValue = x_snc_devtools.GetValue;
 			
 	var progresstracker = new x_snc_devtools.ProgressTrackerAPI();
 	progresstracker.Start();
@@ -60,7 +61,21 @@
 		x_snc_devtools.Sleep(1);
 
 		// Run Test
-		RunTest(grTest);
+		var grTestResult = RunTest(grTest);
+
+		if (grTestResult == false)
+		{
+			progresstracker.SetResult(null,false,'Test Execution failed');
+			return false;
+		}
+
+		var bTestSuccess = (grTestResult.status == 'success');
+
+		if (bTestSuccess == true)
+		{
+			progresstracker.SetResult(null,true,'Test passed!');	
+			return true;
+		}
 
 		// Did the test pass?
 			// stop
@@ -87,8 +102,7 @@
 
 	progresstracker.SetPercentageProgress(100);
 
-	progresstracker.SetResult(null,true,'TODO: Test-Driven Code Generation. ENDED');
-	Log('TestDrivenCodeGeneration: END');
+	progresstracker.SetResult(null,false,'Maximum iterations used, Test-Driven Code Generation was NOT successful.');
 
 	return true;
 }]]></script>
@@ -96,13 +110,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:47:38</sys_created_on>
         <sys_id>b949fd2fc359de105a37f90705013157</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>TestDrivenCodeGeneration</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_b949fd2fc359de105a37f90705013157</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-25 15:45:18</sys_updated_on>
+        <sys_updated_on>2024-10-27 14:39:45</sys_updated_on>
     </sys_script_include>
 </record_update>
