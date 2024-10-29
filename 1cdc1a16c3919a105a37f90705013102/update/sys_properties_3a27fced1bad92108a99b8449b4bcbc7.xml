@@ -11,15 +11,15 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-29 10:06:08</sys_created_on>
         <sys_id>3a27fced1bad92108a99b8449b4bcbc7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>x_snc_ad.testdrivencodegeneration.iterations</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_properties_3a27fced1bad92108a99b8449b4bcbc7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-29 10:06:08</sys_updated_on>
-        <type>string</type>
+        <sys_updated_on>2024-10-29 15:36:23</sys_updated_on>
+        <type>integer</type>
         <value>10</value>
         <write_roles/>
     </sys_properties>
