@@ -155,8 +155,6 @@
 		strPrompt += 'Opening curly brackets must be in the next line - not at the end of the previous line.\n';
 		strPrompt += 'Your answer must consist of the new source code only, starting with the keyword "funtion" and end with the closing curly bracket.\n';
 		strPrompt += 'Thank you and good luck!';
-
-		Debug(strPrompt);
 		
 		// Send prompt to LLM
 		var strResponse = Prompt(strPrompt);
@@ -165,8 +163,6 @@
 			Error('Failed to send prompt to the LLM.');
 			return false;
 		}
-
-		Debug(strResponse);
 
 		if (strCode == strResponse)
 		{
@@ -196,13 +192,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:47:38</sys_created_on>
         <sys_id>b949fd2fc359de105a37f90705013157</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>TestDrivenCodeGeneration</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_b949fd2fc359de105a37f90705013157</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-01 21:55:55</sys_updated_on>
+        <sys_updated_on>2024-11-01 22:01:27</sys_updated_on>
     </sys_script_include>
 </record_update>
