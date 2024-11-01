@@ -41,6 +41,16 @@
 	
 	<h2>Installation</h2>
 	<ol>
+		<li>Navigate to&#160;<a href="/now/app-manager/home/" target="_blank">Plugins</a></li>
+		<li>Click button "Sync with Store"</li>
+		<li>Search for&#160;<a href="/now/app-manager/home/app/id/8178fec0ce0431105a7c9305875b2dca" target="_blank">Now Assist for Creator</a></li>
+		<li>Install "Now Assist for Creator"</li>
+		<li>Navigate to the&#160;<a href="/nav_to.do?uri=sys_one_extend_capability.do?sys_id=0c90ca79533121106b38ddeeff7b12d7" target="_blank">Generic Prompt Capability</a></li>
+		<li>Select the related list "OneExtend Definition Configs".</li>
+		<li>Set the preferred LLM as the default.</li>
+		<li>Open the OneExtend Capability Definition.</li>
+		<li>Open the Connection and Credential Alias.</li>
+		<li>Select "Create Connection and Credential" and add authentication credentials if not done already.</li>
 		<g2:no_escape>$[
 			docapi.RenderInstallationInstructionsImportFromSourceControl(
 				'DevTools',
@@ -56,7 +66,6 @@
 		<g2:no_escape>$[
 			docapi.RenderInstallationInstructionsAppInstall();
 		]</g2:no_escape>		
-		<li>TODO: Add further steps required for installation...</li>
 	</ol>
 	
 	<h2>Reference</h2>
@@ -118,13 +127,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>b6d53d2bc359de105a37f907050131f9</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_ui_page_b6d53d2bc359de105a37f907050131f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-23 09:44:05</sys_updated_on>
+        <sys_updated_on>2024-11-01 22:30:19</sys_updated_on>
     </sys_ui_page>
 </record_update>
