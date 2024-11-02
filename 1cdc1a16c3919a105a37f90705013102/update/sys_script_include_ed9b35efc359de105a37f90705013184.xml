@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_ad.IsTestDrivenCodeGenerationAvailable</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Returns true if the ArtificalDeveloper app is active and Test-Driven Code generation is supported for the given record, otherwise false.</description>
+        <name>IsTestDrivenCodeGenerationAvailable</name>
+        <script><![CDATA[function IsTestDrivenCodeGenerationAvailable(grRecord)
+{
+	if (IsActive() == false)
+	{
+		return false;
+	}
+	if (x_snc_devtools.IsValidRecord(grRecord) == false)
+	{
+		return false;
+	}
+	var strRecordClassName = grRecord.getRecordClassName();
+	if (strRecordClassName == 'sys_script_include')
+	{
+		return true;
+	}
+	return false;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-23 09:57:33</sys_created_on>
+        <sys_id>ed9b35efc359de105a37f90705013184</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>IsTestDrivenCodeGenerationAvailable</sys_name>
+        <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>sys_script_include_ed9b35efc359de105a37f90705013184</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-02 12:49:29</sys_updated_on>
+    </sys_script_include>
+</record_update>

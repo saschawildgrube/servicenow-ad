@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_ad.AppGetDependencies</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description>Retrieves information about the app's dependencies to other apps and required versions.</description>
+        <name>AppGetDependencies</name>
+        <script><![CDATA[function AppGetDependencies()
+{
+	return x_snc_devtools.GetValue(
+		x_snc_devtools.GetPackageDependencyTree(
+			'x_snc_ad'),
+		'_dependencies');
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-23 09:30:57</sys_created_on>
+        <sys_id>6ed53d2bc359de105a37f907050131ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AppGetDependencies</sys_name>
+        <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>sys_script_include_6ed53d2bc359de105a37f907050131ae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-23 09:30:57</sys_updated_on>
+    </sys_script_include>
+</record_update>
