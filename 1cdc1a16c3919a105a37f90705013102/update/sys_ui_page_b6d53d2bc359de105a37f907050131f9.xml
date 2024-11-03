@@ -24,21 +24,22 @@
 	<h2>Test-Driven Code Generation</h2> 
 	<p>LLMs have made considerable progress since ChatGPT was made available to the public for the first time. And the quality of generated code improved greatly. But yet, the created code by far does not yet meet production standards and is not fit-for-porpose in many cases.</p>
 	<p>The core challenge is that code - in order to function properly - must be an expression of an algorithmic idea - and not the random summary of something that someone (or something) read before. The latter may be the starting point, but it is not sufficient for a final version.</p>
-	<p>Whether tests are written as code or executed manually by a developer, in most cases a (human) developer runs in cycles of building a hypthesis, then writing code, testing the resulting program and analysing the result of the test - to then start over.</p>
+	<p>Whether tests are written as code or executed manually by a developer, in most cases a (human) developer runs in cycles of building a hypthesis, then writing code, testing the resulting program and analysing the result of the test - and then starts over.</p>
 	<p>Test-Driven Development is the practise of automating parts of that cycle by writing test code early in the process and shorten the feedback loop between the hypothesis and the analysis, allowing for greater productivity and more robust results.</p>
-	<p>When the quality of generated code is assessed, in a way apples and oranged are compared. Generated code usually results from a single prompt, containing a description of the requirement, eventually the current version of a code and the AI is then expected to deliver a result that is comparable with what an experienced human developer would provide after running through the cycles several times. But is that fair?</p>
+	<p>When the quality of generated code is assessed, we compare apples and oranged. Generated code usually results from a single prompt, containing a description of the requirement, eventually the current version of the code. Do we really expect the AI to deliver a result that is comparable to what an experienced human developer would provide after running through the cycle several times? Is that fair?</p>
 	<p>The more relevant questions are: are we asking the AI the right way? Do we make the best use of the technology?</p>
-	<p>Test-Driven Code Generation is the idea to integrate the generative power of the AI in the same procedural framework that the human developer would go through. Where Test-Driven Development automates the testing part in the cycle, Test-Driven Code Generation aims at automating the part where code is actually written.</p>
+	<p>Test-Driven Code Generation (also referred to as "Test-Driven Generation" or "TDG") is to integrate the generative power of AI in the same procedure that the human developer would go through. Where Test-Driven Development automates the testing part in the cycle, Test-Driven Code Generation aims at automating the part where code is actually written.</p>
 	<ol>
-	<li>1. Human writes boilerplate code and describes the outcome.</li>
-	<li>2. Human writes a test.</li>
-	<li>3. The test is run.</li>
-	<li>4. If the test passes, end here or return to step 2 to add more test cases.</li>
-	<li>5. If the test fails, ask the AI to implement the code based on the description, the interface, he current version of the code, the test code and the test result log.</li>
-	<li>6. Return to step 3.</li>
+	<li>Human writes boilerplate code and describes the outcome.</li>
+	<li>Human writes a test.</li>
+	<li>The test is run.</li>
+	<li>If the test passes, end here or return to step 2 to add more test cases.</li>
+	<li>If the test fails, ask AI to implement the code based on the description, the interface, the current version of the code, the test code and the latest test results.</li>
+	<li>Return to step 3.</li>
 	</ol>
 	<p>As of now, the Artifical Developer app supports Test-Driven Code generation for Script Includes only. As there are no built-in references between Script Includes and ATF Tests, the app assumes a naming convention that requires an ATF test to be called After the app the Script Include is contained in, then a dash, then the name of the Script Include. E.g.: "Artificial Developer - TestDrivenCodeGeneration".</p> 
-
+	<p>For disambiguation: The term "Test-Driven Generation" has sometimes been used to describe the process of creating test cases (not the code to fit these tests) using AI. However, more recent publications use the term consistently for for code (not test) generation.</p>
+	
 	<h2>Disclaimer</h2>
 	<g2:no_escape>$[docapi.RenderDisclaimer()]</g2:no_escape>	
 	
@@ -131,9 +132,9 @@
 	
 	<h2>Release Notes</h2>
 
-	<h3>1.1.0 - TODO</h3>
+	<h3>1.0.1 - TODO</h3>
 	<ol>
-		<li>TODO: Document changes here...</li>
+		<li>Updated wording in manual.</li>
 	</ol>
 
 
@@ -149,13 +150,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>b6d53d2bc359de105a37f907050131f9</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_ui_page_b6d53d2bc359de105a37f907050131f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-02 12:48:45</sys_updated_on>
+        <sys_updated_on>2024-11-03 11:40:04</sys_updated_on>
     </sys_ui_page>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>b6d53d2bc359de105a37f907050131f9</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-03 11:24:21</sys_created_on>
+        <sys_id>b64972471b2d12108a99b8449b4bcbc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-03 11:24:21</sys_updated_on>
+        <table>sys_ui_page</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

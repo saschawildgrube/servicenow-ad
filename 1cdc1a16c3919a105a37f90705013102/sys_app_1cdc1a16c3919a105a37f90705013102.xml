@@ -22,7 +22,8 @@
         <runtime_access_tracking>permissive</runtime_access_tracking>
         <scope>x_snc_ad</scope>
         <scoped_administration>false</scoped_administration>
-        <short_description>The ArtificalDeveloper performs "Test Driven Code Generation" - a human developer writes the test and the GenAI is asked to implement the code to fit the test.</short_description>
+        <short_description>The ArtificalDeveloper performs "Test Driven Code Generation" (also referred to as "Test-Driven Generation" or "TDG") - a human developer writes the test and GenAI writes the code to fit the test.&#13;
+The ArtificialDeveloper app is the world's first enterprise production ready implementation of the Test-Driven Code Generation pattern - on the ServiceNow platform!</short_description>
         <source>x_snc_ad</source>
         <store_correlation_id/>
         <store_url/>
@@ -32,9 +33,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-19 15:08:47</sys_created_on>
         <sys_id>1cdc1a16c3919a105a37f90705013102</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-23 09:35:39</sys_updated_on>
+        <sys_updated_on>2024-11-03 11:29:02</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
@@ -46,8 +47,6 @@
         <x_snc_devtools_maintainer>Sascha Wildgrube</x_snc_devtools_maintainer>
         <x_snc_devtools_maintainer_email>sascha.wildgrube@servicenow.com</x_snc_devtools_maintainer_email>
         <x_snc_devtools_repo_url>https://github.com/saschawildgrube/servicenow-ad.git</x_snc_devtools_repo_url>
-        <x_snc_wildgrubelab_test/>
-        <x_snc_wildgrubelab_test2/>
     </sys_app>
     <sys_translated_text action="delete_multiple" query="documentkey=1cdc1a16c3919a105a37f90705013102"/>
 </record_update>
