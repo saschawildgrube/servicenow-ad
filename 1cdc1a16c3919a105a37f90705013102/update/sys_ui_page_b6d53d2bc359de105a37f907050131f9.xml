@@ -129,8 +129,9 @@
 	
 	<h2>Release Notes</h2>
 
-	<h3>1.0.2 - 2024-11-10</h3>
+	<h3>1.1.0 - 2024-11-10</h3>
 	<ol>
+		<li>Now also supports responses provided by NowLLM Mixtral.</li>
 		<li>Minor prompt improvements.</li>
 		<li>Added chapter on Developer Efficiency Gains and problem classes to the manual.</li>
 	</ol>
@@ -154,13 +155,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>b6d53d2bc359de105a37f907050131f9</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_ui_page_b6d53d2bc359de105a37f907050131f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-10 14:39:27</sys_updated_on>
+        <sys_updated_on>2024-11-10 15:28:05</sys_updated_on>
     </sys_ui_page>
 </record_update>
