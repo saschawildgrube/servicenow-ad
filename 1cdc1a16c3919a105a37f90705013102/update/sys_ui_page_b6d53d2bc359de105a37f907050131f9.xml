@@ -100,6 +100,9 @@
 		<g2:no_escape>$[
 			docapi.RenderInstallationInstructionsAppInstall();
 		]</g2:no_escape>	
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsRunTestSuite('7ad57d2bc359de105a37f9070501310a');
+		]</g2:no_escape>			
 		<li>Assign the "x_snc_ad.developer" role to users who should have access to the "Test-Driven Code Generation" capability.</li>	
 	</ol>
 	
@@ -131,7 +134,7 @@
 
 	<h3>1.2.0 - TODO</h3>
 	<ol>
-		<li>TODO: Document changes here...</li>
+		<li>Removed unnecessary logging.</li>
 	</ol>
 
 
@@ -161,13 +164,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>b6d53d2bc359de105a37f907050131f9</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_ui_page_b6d53d2bc359de105a37f907050131f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-11 13:47:51</sys_updated_on>
+        <sys_updated_on>2024-12-05 15:58:34</sys_updated_on>
     </sys_ui_page>
 </record_update>
