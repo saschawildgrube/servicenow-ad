@@ -21,7 +21,7 @@
 	var nPos = x_snc_devtools.StringFind(strResponse,"```");
 	if (nPos != -1)
 	{
-		strResponse = strResponse.substr(0,nPos+1);
+		strResponse = strResponse.substr(0,nPos);
 	}
 
 	return strResponse;
@@ -30,13 +30,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-12-05 16:01:29</sys_created_on>
         <sys_id>b32b242983129a5000d5ccc0deaad303</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>CodeResponsePostProcessing</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_b32b242983129a5000d5ccc0deaad303</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-05 16:06:31</sys_updated_on>
+        <sys_updated_on>2024-12-06 08:48:26</sys_updated_on>
     </sys_script_include>
 </record_update>

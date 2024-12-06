@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_devtools_dependency">
+    <x_snc_devtools_dependency action="DELETE">
+        <dependency display_value="Now Assist for Creator" source="sn_now_creator">8178fec0ce0431105a7c9305875b2dca</dependency>
+        <documentation_url/>
+        <name>Now Assist for Creator</name>
+        <package_class>sys_store_app</package_class>
+        <reason/>
+        <repo_url/>
+        <sys_class_name>x_snc_devtools_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 22:47:50</sys_created_on>
+        <sys_id>637203661be5d6108a99b8449b4bcb77</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Now Assist for Creator</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>x_snc_devtools_dependency_637203661be5d6108a99b8449b4bcb77</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 22:48:27</sys_updated_on>
+        <versions>26.1.1</versions>
+    </x_snc_devtools_dependency>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</application>
+        <file_path/>
+        <instance_id>00dfd44b1b640a14a43dcb7b234bcbf2</instance_id>
+        <instance_name>wildwashington</instance_name>
+        <name>x_snc_devtools_dependency_637203661be5d6108a99b8449b4bcb77</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_devtools_dependency">
+    <x_snc_devtools_dependency action="INSERT_OR_UPDATE">
+        <dependency display_value="Now Assist for Creator" source="sn_now_creator">8178fec0ce0431105a7c9305875b2dca</dependency>
+        <documentation_url/>
+        <name>Now Assist for Creator</name>
+        <package_class>sys_store_app</package_class>
+        <reason/>
+        <repo_url/>
+        <sys_class_name>x_snc_devtools_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 22:47:50</sys_created_on>
+        <sys_id>637203661be5d6108a99b8449b4bcb77</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Now Assist for Creator</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>x_snc_devtools_dependency_637203661be5d6108a99b8449b4bcb77</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 22:48:27</sys_updated_on>
+        <versions>26.1.1</versions>
+    </x_snc_devtools_dependency>
+</record_update>]]></payload>
+        <payload_hash>-1347139499</payload_hash>
+        <record_name>Now Assist for Creator</record_name>
+        <reverted_from/>
+        <source/>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-11-01 22:49:33</sys_created_on>
+        <sys_id>28f24fae83e5d29000d5ccc0deaad3f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>192e9eb6efd0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-11-01 22:49:33</sys_updated_on>
+        <type>Dependency</type>
+        <update_guid>e4f24fae35e5d29047c617c60e1490f8</update_guid>
+        <update_guid_history>e4f24fae35e5d29047c617c60e1490f8:-1347139499</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Now Assist for Creator">5e3cd5f1831eda5000d5ccc0deaad380</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-06 14:12:23</sys_created_on>
+        <sys_db_object display_value="" name="x_snc_devtools_dependency">x_snc_devtools_dependency</sys_db_object>
+        <sys_id>078cf84819ca4b849a2f622f3e896dc4</sys_id>
+        <sys_metadata>637203661be5d6108a99b8449b4bcb77</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Now Assist for Creator</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_scope_delete display_value="">84c8d4d196714f5482125c05838012e4</sys_scope_delete>
+        <sys_update_name>x_snc_devtools_dependency_637203661be5d6108a99b8449b4bcb77</sys_update_name>
+        <sys_update_version display_value="x_snc_devtools_dependency_637203661be5d6108a99b8449b4bcb77">28f24fae83e5d29000d5ccc0deaad3f8</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-06 14:12:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
