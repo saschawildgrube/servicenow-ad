@@ -112,7 +112,8 @@
 
 	<h2>Configure ArtificalDeveloper with ChatGPT 4o using direct integration</h2>
 	<ol>
-		<li></li>
+		<li>Navigate to the&#160;<a href="/nav_to.do?uri=sys_alias.do?sys_id=3b8dbc9983a6125000d5ccc0deaad33e" target="_blank">Artificial Developer OpenAI Credential Alias</a></li>
+		<li>Associate an existing or create a new "API Key Credential" for the OpenAI API to the alias.</li>
 	</ol>
 	
 	<h2>Reference</h2>
@@ -177,13 +178,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>b6d53d2bc359de105a37f907050131f9</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_ui_page_b6d53d2bc359de105a37f907050131f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-17 12:32:29</sys_updated_on>
+        <sys_updated_on>2024-12-17 12:41:47</sys_updated_on>
     </sys_ui_page>
 </record_update>
