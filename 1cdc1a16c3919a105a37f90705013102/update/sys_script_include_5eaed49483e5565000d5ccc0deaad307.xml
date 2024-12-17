@@ -109,9 +109,9 @@ ArtificialDeveloperClientAPI.prototype = Object.extendsObject(global.AbstractAja
         <sys_id>5eaed49483e5565000d5ccc0deaad307</sys_id>
         <sys_mod_count>22</sys_mod_count>
         <sys_name>ArtificialDeveloperClientAPI</sys_name>
-        <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
-        <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_5eaed49483e5565000d5ccc0deaad307</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-12-05 15:58:00</sys_updated_on>
