@@ -13,14 +13,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-12-05 16:02:10</sys_created_on>
         <sys_id>a4cbac2983129a5000d5ccc0deaad3b4</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_atf_step_a4cbac2983129a5000d5ccc0deaad3b4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-06 08:49:05</sys_updated_on>
+        <sys_updated_on>2024-12-17 12:12:47</sys_updated_on>
         <table/>
         <test display_value="ArtificialDeveloper - CodeResponsePostProcessing">90cbac2983129a5000d5ccc0deaad338</test>
         <timeout/>
@@ -35,9 +35,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-12-05 16:02:10</sys_created_on>
         <sys_id>e0cbac2983129a5000d5ccc0deaad3b7</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-06 08:49:05</sys_updated_on>
+        <sys_updated_on>2024-12-17 12:12:47</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -64,11 +64,10 @@
 	TestCase_CodeResponsePostProcessing(null,'');&#13;
 	TestCase_CodeResponsePostProcessing('','');&#13;
 &#13;
-	var strNowLLM = "```javascript\n";&#13;
-	strNowLLM += "function DoSomething()\n";&#13;
-	strNowLLM += "{\n";&#13;
-	strNowLLM += "\treturn '';\n";&#13;
-	strNowLLM += "}```\nSome explanation of the code";&#13;
+	var strInput = "function DoSomething()\n";	&#13;
+	strInput += "{\n";&#13;
+	strInput += "\treturn '';\n";&#13;
+	strInput += "}\n";&#13;
 &#13;
 	var strExpected = "";&#13;
 	strExpected += "function DoSomething()\n";&#13;
@@ -76,7 +75,21 @@
 	strExpected += "\treturn '';\n";&#13;
 	strExpected += "}";&#13;
 &#13;
-	TestCase_CodeResponsePostProcessing(strNowLLM,strExpected);&#13;
+	TestCase_CodeResponsePostProcessing(strInput,strExpected);&#13;
+&#13;
+	var strInput = "```javascript\n";&#13;
+	strInput += "function DoSomething()\n";&#13;
+	strInput += "{\n";&#13;
+	strInput += "\treturn '';\n";&#13;
+	strInput += "}```\nSome explanation of the code";&#13;
+&#13;
+	var strExpected = "";&#13;
+	strExpected += "function DoSomething()\n";&#13;
+	strExpected += "{\n";&#13;
+	strExpected += "\treturn '';\n";&#13;
+	strExpected += "}";&#13;
+&#13;
+	TestCase_CodeResponsePostProcessing(strInput,strExpected);&#13;
 &#13;
 	&#13;
 	return test.GetResult();&#13;

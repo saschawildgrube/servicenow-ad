@@ -9,61 +9,84 @@
         <name>DevToolsPrompt</name>
         <script><![CDATA[function DevToolsPrompt(strPrompt)
 {
-	Debug('DevToolsPrompt');
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetCredentialFromAlias = x_snc_devtools.GetCredentialFromAlias;
+	var GetValue = x_snc_devtools.GetValue;
+	var MakeJson = x_snc_devtools.MakeJson;
+	var HttpRequest = x_snc_devtools.HttpRequest;
+	var ParseJson = x_snc_devtools.ParseJson;
+
+	strPrompt = GetStringValue(strPrompt);
     if (strPrompt == '')
 	{
         return false;
     }
-
-	Debug(strPrompt);
-
-    var credential = x_snc_devtools.GetCredentialFromAlias("x_snc_ad.OpenAI");
-	var strToken = credential['apikey'];
-
-	Debug(strToken);
+    var credential = GetCredentialFromAlias("x_snc_ad.OpenAI");
+	if (credential == false)
+	{
+		return false;
+	}
+	var strToken = GetValue(credential,'apikey');
 
 	if (strToken == '')
 	{
 		return false;
 	}
 
-    var restMessage = new sn_ws.RESTMessageV2();
-    restMessage.setHttpMethod('post');
-    restMessage.setEndpoint('https://api.openai.com/v1/chat/completions');
-    restMessage.setRequestHeader('Authorization', 'Bearer ' + strToken);
-    restMessage.setRequestHeader('Content-Type', 'application/json');
-    restMessage.setRequestBody(JSON.stringify({
-		'model': 'gpt-4o',
-        'messages': [
-			{
-				"role": "user",
-				"content": strPrompt
-			}],
-        'max_tokens': 60
-    }));
+	var params =
+		{
+			url: 'https://api.openai.com/v1/chat/completions',
+			method: 'post',
+			requestbody: MakeJson(
+				{
+					model: 'gpt-4o',
+					messages:
+						[
+							{
+								role: 'user',
+								'content': strPrompt
+							}
+						]
+				}),
+			headers:
+				[
+					{
+						name: 'Authorization',
+						value: 'Bearer ' + strToken
+					},
+					{
+						name: 'Content-Type',
+						value: 'application/json'
+					}
+				],
+			response: "RESTResponseV2"
+			
+		};
 
-    var response = restMessage.execute();
-    var responseBody = response.getBody();
-    var httpStatus = response.getStatusCode();
-    if (httpStatus != 200)
+	var response = HttpRequest(params);
+
+	var nHttpStatus = response.getStatusCode();
+    if (nHttpStatus != 200)
 	{
         return false;
     }
-	
-	var parsedResponse = x_snc_devtools.ParseJson(responseBody);
-	return x_snc_devtools.GetValue(parsedResponse,'choices',0,'message','content');
+
+    var strResponseBody = response.getBody();
+	var parsedResponse = ParseJson(strResponseBody);
+	var strAnswer = GetValue(parsedResponse,'choices',0,'message','content');
+	return strAnswer;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-12-17 08:56:25</sys_created_on>
         <sys_id>960db09983a6125000d5ccc0deaad3ae</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>DevToolsPrompt</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_960db09983a6125000d5ccc0deaad3ae</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-17 09:08:41</sys_updated_on>
+        <sys_updated_on>2024-12-17 12:30:44</sys_updated_on>
     </sys_script_include>
 </record_update>
