@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_ad.CodeResponsePostProcessing</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Post process the response from the LLM that is supposed to be valid code.</description>
+        <name>CodeResponsePostProcessing</name>
+        <script><![CDATA[function CodeResponsePostProcessing(strResponse)
+{
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var StringReplace = x_snc_devtools.StringReplace;
+	var StringFind = x_snc_devtools.StringFind;
+
+	strResponse = GetStringValue(strResponse);
+
+	// Unspecific
+	strResponse = strResponse.trim();
+
+	// NowLLM specific
+	strResponse = StringReplace(strResponse,"```javascript\n",'');
+	var nPos = StringFind(strResponse,"```");
+	if (nPos != -1)
+	{
+		strResponse = strResponse.substr(0,nPos);
+	}
+
+	return strResponse;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-05 16:01:29</sys_created_on>
+        <sys_id>b32b242983129a5000d5ccc0deaad303</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>CodeResponsePostProcessing</sys_name>
+        <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>sys_script_include_b32b242983129a5000d5ccc0deaad303</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-17 13:26:58</sys_updated_on>
+    </sys_script_include>
+</record_update>

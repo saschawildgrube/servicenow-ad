@@ -38,7 +38,7 @@
 	<li>Return to step 3.</li>
 	</ol>
 	<p>As of now, the Artificial Developer app supports Test-Driven Code generation for Script Includes only. As there are no built-in references between Script Includes and ATF Tests, the app assumes a naming convention that requires an ATF test to be called after the app the Script Include is contained in, then a dash, then the name of the Script Include. E.g.: "Artificial Developer - TestDrivenCodeGeneration".</p> 
-	<p>For disambiguation: The term "Test-Driven Generation" has sometimes been used to describe the process of creating test cases (not the code to fit these tests) using AI. However, more recent publications use the term consistently for for code (not test) generation.</p>
+	<p>For disambiguation: The term "Test-Driven Generation" has sometimes been used to describe the process of creating test cases (not the code to fit these tests) using AI. However, more recent publications use the term consistently for code (not test) generation.</p>
 
 	<h2>Developer Efficiency Gains</h2>
 	<p>The big question is: what to expect from AI augmented coding? As always, the answer is: it depends.</p>
@@ -46,11 +46,11 @@
 	
 	<p><b>Class 1 Problems</b></p>
 	<p>These are low complexity non-domain specific problems, where many fit-for-purpose solutions are available on public sources. Solutions do not depend on additional data sources or the system environment. Resulting code delivers fully deterministic results.</p>
-	<p>Examples are simple math problems (linear algebra, geometry, Newton physics) like calculating the volume of bodies or gravitational vectors, or well-known algorithms like sorting or searching.</p>
+	<p>Examples are simple math problems (linear algebra, geometry, Newton physics) like calculating the volume of solid bodies or gravitational vectors, or well-known algorithms like sorting or searching.</p>
 	
 	<p><b>Class 2 Problems</b></p>
 	<p>These are high complexity non-domain specific problems or low complexity domain specific problems. Solutions are available on public sources, but not all of them are fit-for-purpose.</p>
-	<p>Examples are complex math problems with partially non-deterministic results, optimization problems, data validation that require implicit knowledge (e.g. emails, urls, ISINs, IBANs), problems that require data retrieval via database interfaces or REST APIs, low complexity domain-specific problems that involve ServiceNow specific APIs like retrieving records based on filter criteria.</p>	
+	<p>Examples are complex math problems with partially non-deterministic results, optimization problems, data validation that require implicit knowledge (e.g., emails, urls, ISINs, IBANs), problems that require data retrieval via database interfaces or REST APIs, low complexity domain-specific problems that involve ServiceNow specific APIs like retrieving records based on filter criteria.</p>	
 	
 	<p><b>Class 3 Problems</b></p>
 	<p>These are high complexity domain specific problems. Fit-for-purpose solutions are not available on public sources or are difficult to find due to varying terminology or context.</p>
@@ -75,16 +75,6 @@
 	
 	<h2>Installation</h2>
 	<ol>
-		<li>Navigate to&#160;<a href="/now/app-manager/home/" target="_blank">Plugins</a></li>
-		<li>Click button "Sync with Store"</li>
-		<li>Search for&#160;<a href="/now/app-manager/home/app/id/8178fec0ce0431105a7c9305875b2dca" target="_blank">Now Assist for Creator</a></li>
-		<li>Install "Now Assist for Creator"</li>
-		<li>Navigate to the&#160;<a href="/nav_to.do?uri=sys_one_extend_capability.do?sys_id=0c90ca79533121106b38ddeeff7b12d7" target="_blank">Generic Prompt Capability</a></li>
-		<li>Select the related list "OneExtend Definition Configs".</li>
-		<li>Set the preferred LLM as the default.</li>
-		<li>Open the OneExtend Capability Definition.</li>
-		<li>Open the Connection and Credential Alias.</li>
-		<li>Select "Create Connection and Credential" and add authentication credentials if not done already.</li>
 		<g2:no_escape>$[
 			docapi.RenderInstallationInstructionsImportFromSourceControl(
 				'DevTools',
@@ -100,7 +90,30 @@
 		<g2:no_escape>$[
 			docapi.RenderInstallationInstructionsAppInstall();
 		]</g2:no_escape>	
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsRunTestSuite('7ad57d2bc359de105a37f9070501310a');
+		]</g2:no_escape>			
 		<li>Assign the "x_snc_ad.developer" role to users who should have access to the "Test-Driven Code Generation" capability.</li>	
+	</ol>
+
+	<h2>Configure ArtificalDeveloper to use the Generative AI Controller</h2>
+	<ol>
+		<li>Navigate to&#160;<a href="/now/app-manager/home/" target="_blank">Plugins</a></li>
+		<li>Click button "Sync with Store"</li>
+		<li>Search for&#160;<a href="/now/app-manager/home/app/id/8178fec0ce0431105a7c9305875b2dca" target="_blank">Now Assist for Creator</a></li>
+		<li>Install "Now Assist for Creator"</li>
+		<li>Navigate to the&#160;<a href="/nav_to.do?uri=sys_one_extend_capability.do?sys_id=0c90ca79533121106b38ddeeff7b12d7" target="_blank">Generic Prompt Capability</a></li>
+		<li>Select the related list "OneExtend Definition Configs".</li>
+		<li>Set the preferred LLM as the default.</li>
+		<li>Open the OneExtend Capability Definition.</li>
+		<li>Open the Connection and Credential Alias.</li>
+		<li>Select "Create Connection and Credential" and add authentication credentials if not done already.</li>
+	</ol>
+
+	<h2>Configure ArtificalDeveloper with ChatGPT 4o using direct integration</h2>
+	<ol>
+		<li>Navigate to the&#160;<a href="/nav_to.do?uri=sys_alias.do?sys_id=3b8dbc9983a6125000d5ccc0deaad33e" target="_blank">Artificial Developer OpenAI Credential Alias</a></li>
+		<li>Associate an existing or create a new "API Key Credential" for the OpenAI API to the alias.</li>
 	</ol>
 	
 	<h2>Reference</h2>
@@ -129,6 +142,17 @@
 	
 	<h2>Release Notes</h2>
 
+	<h3>1.2.0 - 2024-12-17</h3>
+	<ol>
+		<li>DevTools 1.108.0 is now required.</li>
+		<li>Added direct integration to OpenAI's ChatGPT API.</li>
+		<li>Added chapters on how to configure the ArtificialDeveloper to use the Generative AI Controller and the OpenAI ChatGPT integration directly.</li>
+		<li>Removed dependency to "Now Assist for Creator" since using the Generative AI Controller is now optional.</li>
+		<li>Added function CodeResponsePostProcessing().</li>
+		<li>Removed unnecessary logging.</li>
+	</ol>
+
+
 	<h3>1.1.0 - 2024-11-10</h3>
 	<ol>
 		<li>Now also supports responses provided by NowLLM Mixtral.</li>
@@ -155,13 +179,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>b6d53d2bc359de105a37f907050131f9</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_ui_page_b6d53d2bc359de105a37f907050131f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-11-10 15:28:05</sys_updated_on>
+        <sys_updated_on>2024-12-17 13:26:09</sys_updated_on>
     </sys_ui_page>
 </record_update>

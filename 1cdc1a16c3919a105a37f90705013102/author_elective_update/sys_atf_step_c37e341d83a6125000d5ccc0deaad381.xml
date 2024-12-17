@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="DELETE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-17 09:01:12</sys_created_on>
+        <sys_id>c37e341d83a6125000d5ccc0deaad381</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>sys_atf_step_c37e341d83a6125000d5ccc0deaad381</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-17 09:03:24</sys_updated_on>
+        <table/>
+        <test display_value="ArtificialDeveloper - FizzBuzz">877e341d83a6125000d5ccc0deaad305</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="DELETE" query="document_key=c37e341d83a6125000d5ccc0deaad381"/>
+    <sys_variable_value action="DELETE">
+        <document>sys_atf_step</document>
+        <document_key>c37e341d83a6125000d5ccc0deaad381</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-17 09:01:13</sys_created_on>
+        <sys_id>4b7e341d83a6125000d5ccc0deaad383</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-17 09:01:13</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="DELETE">
+        <document>sys_atf_step</document>
+        <document_key>c37e341d83a6125000d5ccc0deaad381</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-17 09:01:13</sys_created_on>
+        <sys_id>837e341d83a6125000d5ccc0deaad384</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-17 09:03:24</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	&#13;
+	test.SetResult(true);&#13;
+&#13;
+	&#13;
+&#13;
+	function TestCase_FizzBuzz(vInput, vExpected)&#13;
+	{&#13;
+		function TestCase_FizzBuzz_CheckResult(vInput,vExpected,vResult)&#13;
+		{&#13;
+			return (vExpected == vResult);&#13;
+		}&#13;
+&#13;
+		test.TestCase(&#13;
+			'Function FizzBuzz()',&#13;
+			FizzBuzz,&#13;
+			{&#13;
+				'vInput': vInput&#13;
+			},&#13;
+			vExpected,&#13;
+			TestCase_FizzBuzz_CheckResult);&#13;
+	}&#13;
+&#13;
+	TestCase_FizzBuzz(null,'0');&#13;
+	TestCase_FizzBuzz(0,'0');&#13;
+	TestCase_FizzBuzz(1,'1');&#13;
+	TestCase_FizzBuzz(2,'2');&#13;
+	TestCase_FizzBuzz(3,'Fizz');&#13;
+	TestCase_FizzBuzz(4,'4');&#13;
+	TestCase_FizzBuzz(5,'Buzz');&#13;
+	TestCase_FizzBuzz(6,'Fizz');&#13;
+	TestCase_FizzBuzz(7,'7');&#13;
+	TestCase_FizzBuzz(8,'9');&#13;
+	TestCase_FizzBuzz(9,'Fizz');&#13;
+	TestCase_FizzBuzz(15,'FizzBuzz');&#13;
+&#13;
+&#13;
+&#13;
+	return test.GetResult();&#13;
+	&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</application>
+        <file_path/>
+        <instance_id>00dfd44b1b640a14a43dcb7b234bcbf2</instance_id>
+        <instance_name>wildwashington</instance_name>
+        <name>sys_atf_step_c37e341d83a6125000d5ccc0deaad381</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step"><sys_atf_step action="INSERT_OR_UPDATE"><active>true</active><copied_from/><description>Run Server Side Validation Script</description><display_name>Run Server Side Script</display_name><inputs/><mugshots_cache_json/><notes/><order>1</order><step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config><sys_class_name>sys_atf_step</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-12-17 09:01:12</sys_created_on><sys_id>c37e341d83a6125000d5ccc0deaad381</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Run Server Side Script</sys_name><sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package><sys_policy/><sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope><sys_update_name>sys_atf_step_c37e341d83a6125000d5ccc0deaad381</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-12-17 09:03:24</sys_updated_on><table/><test display_value="ArtificialDeveloper - FizzBuzz">877e341d83a6125000d5ccc0deaad305</test><timeout/><warning_message/></sys_atf_step><sys_variable_value action="delete_multiple" query="document_key=c37e341d83a6125000d5ccc0deaad381"/><sys_variable_value action="INSERT_OR_UPDATE"><document>sys_atf_step</document><document_key>c37e341d83a6125000d5ccc0deaad381</document_key><order>100</order><sys_class_name>sys_variable_value</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-12-17 09:01:13</sys_created_on><sys_id>4b7e341d83a6125000d5ccc0deaad383</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-12-17 09:01:13</sys_updated_on><value>3.1</value><variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable></sys_variable_value><sys_variable_value action="INSERT_OR_UPDATE"><document>sys_atf_step</document><document_key>c37e341d83a6125000d5ccc0deaad381</document_key><order>200</order><sys_class_name>sys_variable_value</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-12-17 09:01:13</sys_created_on><sys_id>837e341d83a6125000d5ccc0deaad384</sys_id><sys_mod_count>1</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-12-17 09:03:24</sys_updated_on><value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	&#13;
+	test.SetResult(true);&#13;
+&#13;
+	&#13;
+&#13;
+	function TestCase_FizzBuzz(vInput, vExpected)&#13;
+	{&#13;
+		function TestCase_FizzBuzz_CheckResult(vInput,vExpected,vResult)&#13;
+		{&#13;
+			return (vExpected == vResult);&#13;
+		}&#13;
+&#13;
+		test.TestCase(&#13;
+			'Function FizzBuzz()',&#13;
+			FizzBuzz,&#13;
+			{&#13;
+				'vInput': vInput&#13;
+			},&#13;
+			vExpected,&#13;
+			TestCase_FizzBuzz_CheckResult);&#13;
+	}&#13;
+&#13;
+	TestCase_FizzBuzz(null,'0');&#13;
+	TestCase_FizzBuzz(0,'0');&#13;
+	TestCase_FizzBuzz(1,'1');&#13;
+	TestCase_FizzBuzz(2,'2');&#13;
+	TestCase_FizzBuzz(3,'Fizz');&#13;
+	TestCase_FizzBuzz(4,'4');&#13;
+	TestCase_FizzBuzz(5,'Buzz');&#13;
+	TestCase_FizzBuzz(6,'Fizz');&#13;
+	TestCase_FizzBuzz(7,'7');&#13;
+	TestCase_FizzBuzz(8,'9');&#13;
+	TestCase_FizzBuzz(9,'Fizz');&#13;
+	TestCase_FizzBuzz(15,'FizzBuzz');&#13;
+&#13;
+&#13;
+&#13;
+	return test.GetResult();&#13;
+	&#13;
+})(outputs, steps, stepResult, assertEqual);</value><variable display_value="Test script">989d9e235324220002c6435723dc3484</variable></sys_variable_value></record_update>]]></payload>
+        <payload_hash>658586700</payload_hash>
+        <record_name>Run Server Side Script</record_name>
+        <reverted_from/>
+        <source>a526b26e8365d29000d5ccc0deaad38d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-17 09:03:24</sys_created_on>
+        <sys_id>57fefc1d83a6125000d5ccc0deaad3cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>193d3db99570000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-17 09:03:24</sys_updated_on>
+        <type>Test Step</type>
+        <update_guid>1ffefc1d14a6125015cd7892bde3c9cb</update_guid>
+        <update_guid_history>1ffefc1d14a6125015cd7892bde3c9cb:658586700,8b7e341da8a61250a13e8e676e980985:1138192220</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-17 10:30:41</sys_created_on>
+        <sys_db_object display_value="" name="sys_atf_step">sys_atf_step</sys_db_object>
+        <sys_id>0f6bee015b9b4088852e5fdeb62bd7e4</sys_id>
+        <sys_metadata>c37e341d83a6125000d5ccc0deaad381</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_scope_delete display_value="">84c8d4d196714f5482125c05838012e4</sys_scope_delete>
+        <sys_update_name>sys_atf_step_c37e341d83a6125000d5ccc0deaad381</sys_update_name>
+        <sys_update_version display_value="sys_atf_step_c37e341d83a6125000d5ccc0deaad381">57fefc1d83a6125000d5ccc0deaad3cc</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-17 10:30:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

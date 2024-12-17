@@ -5,7 +5,19 @@
         <api_name>x_snc_ad.DevTools</api_name>
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
-        <description>Implements the extension point for DevTools.</description>
+        <description>Implements the extension point for DevTools.
+|
+Methods:
+* initialize()
+* GetParentRecord()
+* GetLinkDirectory()
+* GetFormatConfig()
+* GetApplicationStatus()
+* RenderDebugDump()
+* GetInstancePipelineName()
+* GetEncodedQueryToPreventUselessChecks()
+* AppVersionBaselineOnFinish()
+* Prompt()</description>
         <name>DevTools</name>
         <script><![CDATA[var DevTools = Class.create();
 DevTools.prototype = {
@@ -95,6 +107,16 @@ DevTools.prototype = {
 		}
 	},			
 
+	Prompt: function(vPrompt)
+	{
+		var IsValidFunction = x_snc_devtools.IsValidFunction;
+		if (IsValidFunction(x_snc_ad.DevToolsPrompt))
+		{
+			return DevToolsPrompt(vPrompt);
+		}
+		return false;
+	},		
+
 	
 	type: 'DevTools'
 };]]></script>
@@ -102,13 +124,13 @@ DevTools.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>22d53d2bc359de105a37f907050131cd</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>DevTools</sys_name>
         <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_22d53d2bc359de105a37f907050131cd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-23 09:30:58</sys_updated_on>
+        <sys_updated_on>2024-12-17 10:50:50</sys_updated_on>
     </sys_script_include>
 </record_update>

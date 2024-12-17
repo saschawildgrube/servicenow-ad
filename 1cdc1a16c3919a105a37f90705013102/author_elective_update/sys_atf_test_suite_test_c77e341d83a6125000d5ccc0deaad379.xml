@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test">
+    <sys_atf_test_suite_test action="DELETE">
+        <abort_on_failure>false</abort_on_failure>
+        <order>0</order>
+        <sys_class_name>sys_atf_test_suite_test</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-17 09:01:12</sys_created_on>
+        <sys_id>c77e341d83a6125000d5ccc0deaad379</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>877e341d83a6125000d5ccc0deaad305</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>sys_atf_test_suite_test_c77e341d83a6125000d5ccc0deaad379</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-17 09:01:12</sys_updated_on>
+        <test display_value="ArtificialDeveloper - New Test">877e341d83a6125000d5ccc0deaad305</test>
+        <test_suite display_value="ArtificialDeveloper">7ad57d2bc359de105a37f9070501310a</test_suite>
+    </sys_atf_test_suite_test>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</application>
+        <file_path/>
+        <instance_id>00dfd44b1b640a14a43dcb7b234bcbf2</instance_id>
+        <instance_name>wildwashington</instance_name>
+        <name>sys_atf_test_suite_test_c77e341d83a6125000d5ccc0deaad379</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test"><sys_atf_test_suite_test action="INSERT_OR_UPDATE"><abort_on_failure>false</abort_on_failure><order>0</order><sys_class_name>sys_atf_test_suite_test</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-12-17 09:01:12</sys_created_on><sys_id>c77e341d83a6125000d5ccc0deaad379</sys_id><sys_mod_count>0</sys_mod_count><sys_name>877e341d83a6125000d5ccc0deaad305</sys_name><sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package><sys_policy/><sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope><sys_update_name>sys_atf_test_suite_test_c77e341d83a6125000d5ccc0deaad379</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-12-17 09:01:12</sys_updated_on><test display_value="ArtificialDeveloper - New Test">877e341d83a6125000d5ccc0deaad305</test><test_suite display_value="ArtificialDeveloper">7ad57d2bc359de105a37f9070501310a</test_suite></sys_atf_test_suite_test></record_update>]]></payload>
+        <payload_hash>-1792005450</payload_hash>
+        <record_name>877e341d83a6125000d5ccc0deaad305</record_name>
+        <reverted_from/>
+        <source>972eba39c39416905a37f90705013172</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-17 09:01:12</sys_created_on>
+        <sys_id>837e341d83a6125000d5ccc0deaad37c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>193d3d9972c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-17 09:01:12</sys_updated_on>
+        <type>Test Suite Test</type>
+        <update_guid>877e341d8ba61250b0e9d5d07ffc257b</update_guid>
+        <update_guid_history>877e341d8ba61250b0e9d5d07ffc257b:-1792005450</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-17 10:30:42</sys_created_on>
+        <sys_db_object display_value="" name="sys_atf_test_suite_test">sys_atf_test_suite_test</sys_db_object>
+        <sys_id>b69804857dfd493d9c0cb9074e8318e1</sys_id>
+        <sys_metadata>c77e341d83a6125000d5ccc0deaad379</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>877e341d83a6125000d5ccc0deaad305</sys_name>
+        <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_scope_delete display_value="">84c8d4d196714f5482125c05838012e4</sys_scope_delete>
+        <sys_update_name>sys_atf_test_suite_test_c77e341d83a6125000d5ccc0deaad379</sys_update_name>
+        <sys_update_version display_value="sys_atf_test_suite_test_c77e341d83a6125000d5ccc0deaad379">837e341d83a6125000d5ccc0deaad37c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-17 10:30:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
