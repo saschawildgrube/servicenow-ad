@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_ad.SetTestStepScript</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Returns the script contained in the given run server side script test step or the script of the first run server side test step script.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>SetTestStepScript</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[function SetTestStepScript(vTestStep,strTestScript)
+{
+	var grTestStep = GetRecord('sys_atf_step',vTestStep);
+	if (IsValidRecord(grTestStep) == false)
+	{
+		var grTest = GetRecord('sys_atf_test',vTestStep);
+		if (IsValidRecord(grTest) == false)
+		{
+			return false;
+		}	
+		grTestStep = new GlideRecord('sys_atf_step');
+		grTestStep.orderBy('order');
+		grTestStep.addQuery('test','=',grTest.sys_id);
+		grTestStep.addQuery('step_config','=','41de4a935332120028bc29cac2dc349a');
+		grTestStep.setLimit(1);
+		grTestStep.query();
+		if (grTestStep.next() == false)
+		{
+			return false;
+		}
+	}
+	
+	var grVariable = new GlideRecord('sys_variable_value');
+	grVariable.addQuery('document_key','=',grTestStep.sys_id);
+	grVariable.addQuery('variable','=',
+		AppGetProperty('atf.step_config.runserversidescript.variable.script'));
+	grVariable.query();
+	if (grVariable.next() == false)
+	{
+		return false;
+	}
+	var strTestCode = GetStringValue(grVariable.value);
+	return strTestCode;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 08:20:33</sys_created_on>
+        <sys_id>823a76149351e610959b7fda2bba1043</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SetTestStepScript</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_update_name>sys_script_include_823a76149351e610959b7fda2bba1043</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 08:20:33</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</application>
+        <file_path/>
+        <instance_id>220092723b73421816e44a8aa4e45ab1</instance_id>
+        <instance_name>wildxanadu</instance_name>
+        <name>sys_script_include_823a76149351e610959b7fda2bba1043</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_snc_ad.SetTestStepScript&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description&gt;Returns the script contained in the given run server side script test step or the script of the first run server side test step script.&lt;/description&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;SetTestStepScript&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[function SetTestStepScript(vTestStep,strTestScript)
+{
+	var grTestStep = GetRecord('sys_atf_step',vTestStep);
+	if (IsValidRecord(grTestStep) == false)
+	{
+		var grTest = GetRecord('sys_atf_test',vTestStep);
+		if (IsValidRecord(grTest) == false)
+		{
+			return false;
+		}	
+		grTestStep = new GlideRecord('sys_atf_step');
+		grTestStep.orderBy('order');
+		grTestStep.addQuery('test','=',grTest.sys_id);
+		grTestStep.addQuery('step_config','=','41de4a935332120028bc29cac2dc349a');
+		grTestStep.setLimit(1);
+		grTestStep.query();
+		if (grTestStep.next() == false)
+		{
+			return false;
+		}
+	}
+	
+	var grVariable = new GlideRecord('sys_variable_value');
+	grVariable.addQuery('document_key','=',grTestStep.sys_id);
+	grVariable.addQuery('variable','=',
+		AppGetProperty('atf.step_config.runserversidescript.variable.script'));
+	grVariable.query();
+	if (grVariable.next() == false)
+	{
+		return false;
+	}
+	var strTestCode = GetStringValue(grVariable.value);
+	return strTestCode;
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-04-30 08:20:33&lt;/sys_created_on&gt;&lt;sys_id&gt;823a76149351e610959b7fda2bba1043&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;SetTestStepScript&lt;/sys_name&gt;&lt;sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad"&gt;1cdc1a16c3919a105a37f90705013102&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS"&gt;1cdc1a16c3919a105a37f90705013102&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_823a76149351e610959b7fda2bba1043&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-04-30 08:20:33&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1185915751</payload_hash>
+        <record_name>SetTestStepScript</record_name>
+        <reverted_from/>
+        <source>ac69b1d193ae9e10ae97b4aa6aba10d3</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 08:20:33</sys_created_on>
+        <sys_id>863a76149351e610959b7fda2bba1046</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19685c886bc0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 08:20:33</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>4a3a7614f251e61073f314d976e65d45</update_guid>
+        <update_guid_history>4a3a7614f251e61073f314d976e65d45:1185915751</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 08:21:57</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>76f08a925a1e40bca32ca0a9c4d25290</sys_id>
+        <sys_metadata>823a76149351e610959b7fda2bba1043</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SetTestStepScript</sys_name>
+        <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
+        <sys_scope_delete display_value="">84c8d4d196714f5482125c05838012e4</sys_scope_delete>
+        <sys_update_name>sys_script_include_823a76149351e610959b7fda2bba1043</sys_update_name>
+        <sys_update_version display_value="sys_script_include_823a76149351e610959b7fda2bba1043">863a76149351e610959b7fda2bba1046</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 08:21:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
