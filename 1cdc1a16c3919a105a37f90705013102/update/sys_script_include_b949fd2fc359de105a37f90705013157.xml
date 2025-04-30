@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Initiates the test-driven code generation loop based on the given record and performs the loop as often as it takes up to the maximum amount of iterations.</description>
+        <mobile_callable>false</mobile_callable>
         <name>TestDrivenCodeGeneration</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function TestDrivenCodeGeneration(grRecord, nMaxIterations)
 {
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
@@ -19,8 +21,8 @@
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	var RecordGetValue = x_snc_devtools.RecordGetValue;
 	var RecordSetValue = x_snc_devtools.RecordSetValue;
-
-			
+	var GetTestStepScript = x_snc_devtools.GetTestStepScript;
+				
 	var progresstracker = new x_snc_devtools.ProgressTrackerAPI();
 
 	function Error(strMessage)
@@ -66,28 +68,12 @@
 		return false;
 	}
 
-	// Identify first test step with test code
-	var grTestStep = new GlideRecord('sys_atf_step');
-	grTestStep.addQuery('test','=',grTest.sys_id);
-	grTestStep.setLimit(1);
-	grTestStep.orderBy('order');
-	grTestStep.query();
-	if (grTestStep.next() == false)
-	{
-		Error('Could not find first test step.');
-		return false;
-	}
-	var grVariable = new GlideRecord('sys_variable_value');
-	grVariable.addQuery('document_key','=',grTestStep.sys_id);
-	grVariable.addQuery('variable','=',AppGetProperty('atf_test_step_run_server_script_variable'));
-	grVariable.query();
-	if (grVariable.next() == false)
+	var strTestCode = GetTestStepScript(grTest);
+	if (strTestCode === false)
 	{
 		Error('Could not load test code.');
 		return false;
 	}
-	var strTestCode = GetStringValue(grVariable.value);
-
 	if (strTestCode == '')
 	{
 		Error('Test code is empty.');
@@ -200,13 +186,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:47:38</sys_created_on>
         <sys_id>b949fd2fc359de105a37f90705013157</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>TestDrivenCodeGeneration</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_b949fd2fc359de105a37f90705013157</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-01-13 15:21:06</sys_updated_on>
+        <sys_updated_on>2025-04-30 08:03:42</sys_updated_on>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>b949fd2fc359de105a37f90705013157</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 08:03:41</sys_created_on>
+        <sys_id>8f56b2109351e610959b7fda2bba101c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 08:03:41</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

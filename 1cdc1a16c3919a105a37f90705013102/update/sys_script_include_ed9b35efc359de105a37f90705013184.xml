@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Returns true if the ArtificalDeveloper app is active and Test-Driven Code generation is supported for the given record, otherwise false.</description>
+        <mobile_callable>false</mobile_callable>
         <name>IsTestDrivenCodeGenerationAvailable</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function IsTestDrivenCodeGenerationAvailable(grRecord)
 {
 	if (IsActive() == false)
