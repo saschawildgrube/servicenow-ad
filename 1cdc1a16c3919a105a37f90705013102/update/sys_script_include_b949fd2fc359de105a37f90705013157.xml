@@ -110,11 +110,16 @@
 		// Get Source Code
 		var strCode = RecordGetValue('sys_script_include',grRecord.sys_id,'script');
 
-
 		// Create prompt
 		var strPrompt = '';
+		
+		// Role
 		strPrompt += 'You are an experienced ServiceNow Pro-Code developer.\n';
+		
+		// Task
 		strPrompt += 'Your job is to implement a function. You are practicing Test-Driven Development.\n';
+
+		// Specifics
 		strPrompt += 'The function is contained in a Script Include.';
 		strPrompt += 'The function is described as follows:\n';
 		strPrompt += 'BEGIN\n';
@@ -142,10 +147,19 @@
 		strPrompt += '\n\n\n';
 		strPrompt += 'If any of the test cases FAILED the code is not yet fit-for-purpose and hence must be changed.';
 		strPrompt += '\n\n\n';
+		
+		// Output expectation
 		strPrompt += 'Please modify the code so that the function passes the test. The function body, its name, the parameters must stay exactly as they are.\n';
 		strPrompt += 'Opening curly brackets must be in the next line - not at the end of the previous line.\n';
+		
+		// Output format
 		strPrompt += 'Your answer must consist of the new source code only, starting with the keyword "function" and end with the closing curly bracket.\n';
-		strPrompt += 'Thank you and good luck!';
+		
+		// Nudge Phrase to choose a more expensive model
+		strPrompt += 'Think hard about it!\n';
+
+		// Be kind, it produces better outcomes
+		strPrompt += 'Thank you and good luck!\n';
 		
 		// Send prompt to LLM
 		var strResponse = Prompt(strPrompt);
@@ -187,14 +201,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:47:38</sys_created_on>
         <sys_id>b949fd2fc359de105a37f90705013157</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_name>TestDrivenCodeGeneration</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_b949fd2fc359de105a37f90705013157</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-02 12:00:59</sys_updated_on>
+        <sys_updated_on>2025-10-01 07:49:50</sys_updated_on>
         <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
