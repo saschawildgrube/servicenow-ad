@@ -59,7 +59,7 @@
 	<p>These are high complexity domain specific problems. Fit-for-purpose solutions are not available on public sources or are difficult to find due to varying terminology or context.</p>
 	<p>An example is to retrieve an API token from a ServiceNow connection alias and then to use it with a REST API that requires multiple requests to perform a task.</p>	
 
-	<p>As of now - at the time of the release of this application version - Test-Driven Code Generation using GTP4 works very well for class 1 problems, works most of the time for class 2 problems but fails on class 3 problems - although provides code that can serve as a basis for further manual work.</p>
+	<p>As of now - at the time of the release of this application version - Test-Driven Code Generation using GPT-5o works very well for class 1 problems, works most of the time for class 2 problems but does not always excel on class 3 problems - although provides code that can serve as a basis for further manual work.</p>
 	<p>As the Test-Driven Code generation approach requires developers to split capabilities into functions and produce automated tests, the efficiency gain for class 1 problems may be neglectable but for class 2 problems it can be significant. One could argue though that enforcing the refactoring of code into Script Include functions and creation of automated tests is per se a design pattern that saves costs on the long run. As a result, the adoption of TDG and hence indirectly adopting TDD already represents an efficiency gain - even if a particular problem cannot be fully solved through TDG.</p>
 	
 	
@@ -196,14 +196,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>b6d53d2bc359de105a37f907050131f9</sys_id>
-        <sys_mod_count>61</sys_mod_count>
+        <sys_mod_count>62</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="ArtificialDeveloper WORK IN PROGRESS" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper WORK IN PROGRESS">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_ui_page_b6d53d2bc359de105a37f907050131f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-10 14:18:01</sys_updated_on>
+        <sys_updated_on>2025-11-10 14:20:06</sys_updated_on>
     </sys_ui_page>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>b6d53d2bc359de105a37f907050131f9</id>
