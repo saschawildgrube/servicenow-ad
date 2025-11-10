@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>Retrieves information about the app's dependencies to other apps and required versions.</description>
+        <mobile_callable>false</mobile_callable>
         <name>AppGetDependencies</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function AppGetDependencies()
 {
 	return x_snc_devtools.GetValue(
@@ -26,5 +28,6 @@
         <sys_update_name>sys_script_include_6ed53d2bc359de105a37f907050131ae</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-10-23 09:30:57</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

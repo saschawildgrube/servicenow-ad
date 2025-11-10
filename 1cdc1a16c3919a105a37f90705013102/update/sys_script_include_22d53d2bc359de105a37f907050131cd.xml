@@ -18,7 +18,9 @@ Methods:
 * GetEncodedQueryToPreventUselessChecks()
 * AppVersionBaselineOnFinish()
 * Prompt()</description>
+        <mobile_callable>false</mobile_callable>
         <name>DevTools</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var DevTools = Class.create();
 DevTools.prototype = {
 	initialize: function()
@@ -27,8 +29,8 @@ DevTools.prototype = {
 
 	GetParentRecord: function(grRecord)
 	{
-		var IsValidFunction = x_snc_devtools.IsValidFunction;
-		if (IsValidFunction(x_snc_ad.DevToolsGetParentRecord))
+		var IsFunction = x_snc_devtools.IsFunction;
+		if (IsFunction(x_snc_ad.DevToolsGetParentRecord))
 		{
 			return DevToolsGetParentRecord(grRecord);
 		}
@@ -37,8 +39,8 @@ DevTools.prototype = {
 
 	GetLinkDirectory: function(linkdirectory)
 	{
-		var IsValidFunction = x_snc_devtools.IsValidFunction;
-		if (IsValidFunction(x_snc_ad.DevToolsGetLinkDirectory))
+		var IsFunction = x_snc_devtools.IsFunction;
+		if (IsFunction(x_snc_ad.DevToolsGetLinkDirectory))
 		{
 			return DevToolsGetLinkDirectory(linkdirectory);
 		}
@@ -47,8 +49,8 @@ DevTools.prototype = {
 
 	GetFormatConfig: function(grRecord)
 	{
-		var IsValidFunction = x_snc_devtools.IsValidFunction;
-		if (IsValidFunction(x_snc_ad.DevToolsGetFormatConfig))
+		var IsFunction = x_snc_devtools.IsFunction;
+		if (IsFunction(x_snc_ad.DevToolsGetFormatConfig))
 		{
 			return DevToolsGetFormatConfig(grRecord);
 		}
@@ -57,8 +59,8 @@ DevTools.prototype = {
 	
 	GetApplicationStatus: function(status)
 	{
-		var IsValidFunction = x_snc_devtools.IsValidFunction;
-		if (IsValidFunction(x_snc_ad.DevToolsGetApplicationStatus))
+		var IsFunction = x_snc_devtools.IsFunction;
+		if (IsFunction(x_snc_ad.DevToolsGetApplicationStatus))
 		{
 			status = DevToolsGetApplicationStatus(status);
 		}
@@ -67,9 +69,9 @@ DevTools.prototype = {
 
 	RenderDebugDump: function()
 	{
-		var IsValidFunction = x_snc_devtools.IsValidFunction;
+		var IsFunction = x_snc_devtools.IsFunction;
 		var strDebug = '';
-		if (IsValidFunction(x_snc_ad.DevToolsRenderDebugDump))
+		if (IsFunction(x_snc_ad.DevToolsRenderDebugDump))
 		{
 			strDebug = x_snc_devtools.GetStringValue(DevToolsRenderDebugDump());
 		}
@@ -78,9 +80,9 @@ DevTools.prototype = {
 	
 	GetInstancePipelineName: function(strInstanceName)
 	{
-		var IsValidFunction = x_snc_devtools.IsValidFunction;
+		var IsFunction = x_snc_devtools.IsFunction;
 		var strInstancePipelineName = '';
-		if (IsValidFunction(x_snc_ad.DevToolsGetInstancePipelineName))
+		if (IsFunction(x_snc_ad.DevToolsGetInstancePipelineName))
 		{
 			strInstancePipelineName =
 				x_snc_devtools.GetStringValue(DevToolsGetInstancePipelineName(strInstanceName));
@@ -90,8 +92,8 @@ DevTools.prototype = {
 
 	GetEncodedQueryToPreventUselessChecks: function(rules)
 	{
-		var IsValidFunction = x_snc_devtools.IsValidFunction;
-		if (IsValidFunction(x_snc_ad.DevToolsGetEncodedQueryToPreventUselessChecks))
+		var IsFunction = x_snc_devtools.IsFunction;
+		if (IsFunction(x_snc_ad.DevToolsGetEncodedQueryToPreventUselessChecks))
 		{
 			return DevToolsGetEncodedQueryToPreventUselessChecks(rules);
 		}
@@ -100,8 +102,8 @@ DevTools.prototype = {
 
 	AppVersionBaselineOnFinish: function(params)
 	{
-		var IsValidFunction = x_snc_devtools.IsValidFunction;
-		if (IsValidFunction(x_snc_ad.DevToolsAppVersionBaselineOnFinish))
+		var IsFunction = x_snc_devtools.IsFunction;
+		if (IsFunction(x_snc_ad.DevToolsAppVersionBaselineOnFinish))
 		{
 			DevToolsAppVersionBaselineOnFinish(params);
 		}
@@ -109,8 +111,8 @@ DevTools.prototype = {
 
 	Prompt: function(vPrompt)
 	{
-		var IsValidFunction = x_snc_devtools.IsValidFunction;
-		if (IsValidFunction(x_snc_ad.DevToolsPrompt))
+		var IsFunction = x_snc_devtools.IsFunction;
+		if (IsFunction(x_snc_ad.DevToolsPrompt))
 		{
 			return DevToolsPrompt(vPrompt);
 		}
@@ -124,13 +126,25 @@ DevTools.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>22d53d2bc359de105a37f907050131cd</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>DevTools</sys_name>
         <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_22d53d2bc359de105a37f907050131cd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-17 10:50:50</sys_updated_on>
+        <sys_updated_on>2025-08-11 07:48:56</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>22d53d2bc359de105a37f907050131cd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-11 07:48:56</sys_created_on>
+        <sys_id>87be0de193d32210959b7fda2bba1024</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-11 07:48:56</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

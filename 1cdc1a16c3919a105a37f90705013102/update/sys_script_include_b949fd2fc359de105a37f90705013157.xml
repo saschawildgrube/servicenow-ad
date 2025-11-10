@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>Initiates the test-driven code generation loop based on the given record and performs the loop as often as it takes up to the maximum amount of iterations.</description>
+        <mobile_callable>false</mobile_callable>
         <name>TestDrivenCodeGeneration</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function TestDrivenCodeGeneration(grRecord, nMaxIterations)
 {
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
@@ -19,12 +21,13 @@
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	var RecordGetValue = x_snc_devtools.RecordGetValue;
 	var RecordSetValue = x_snc_devtools.RecordSetValue;
-
-			
+	var GetTestStepScript = x_snc_devtools.GetTestStepScript;
+				
 	var progresstracker = new x_snc_devtools.ProgressTrackerAPI();
 
 	function Error(strMessage)
 	{
+		progresstracker.SetText('Error: ' + strMessage);
 		progresstracker.SetResult(null,false,strMessage);
 		LogError(strMessage);
 	} 
@@ -66,28 +69,12 @@
 		return false;
 	}
 
-	// Identify first test step with test code
-	var grTestStep = new GlideRecord('sys_atf_step');
-	grTestStep.addQuery('test','=',grTest.sys_id);
-	grTestStep.setLimit(1);
-	grTestStep.orderBy('order');
-	grTestStep.query();
-	if (grTestStep.next() == false)
-	{
-		Error('Could not find first test step.');
-		return false;
-	}
-	var grVariable = new GlideRecord('sys_variable_value');
-	grVariable.addQuery('document_key','=',grTestStep.sys_id);
-	grVariable.addQuery('variable','=',AppGetProperty('atf_test_step_run_server_script_variable'));
-	grVariable.query();
-	if (grVariable.next() == false)
+	var strTestCode = GetTestStepScript(grTest);
+	if (strTestCode === false)
 	{
 		Error('Could not load test code.');
 		return false;
 	}
-	var strTestCode = GetStringValue(grVariable.value);
-
 	if (strTestCode == '')
 	{
 		Error('Test code is empty.');
@@ -123,11 +110,16 @@
 		// Get Source Code
 		var strCode = RecordGetValue('sys_script_include',grRecord.sys_id,'script');
 
-
 		// Create prompt
 		var strPrompt = '';
+		
+		// Role
 		strPrompt += 'You are an experienced ServiceNow Pro-Code developer.\n';
+		
+		// Task
 		strPrompt += 'Your job is to implement a function. You are practicing Test-Driven Development.\n';
+
+		// Specifics
 		strPrompt += 'The function is contained in a Script Include.';
 		strPrompt += 'The function is described as follows:\n';
 		strPrompt += 'BEGIN\n';
@@ -155,16 +147,25 @@
 		strPrompt += '\n\n\n';
 		strPrompt += 'If any of the test cases FAILED the code is not yet fit-for-purpose and hence must be changed.';
 		strPrompt += '\n\n\n';
+		
+		// Output expectation
 		strPrompt += 'Please modify the code so that the function passes the test. The function body, its name, the parameters must stay exactly as they are.\n';
 		strPrompt += 'Opening curly brackets must be in the next line - not at the end of the previous line.\n';
-		strPrompt += 'Your answer must consist of the new source code only, starting with the keyword "funtion" and end with the closing curly bracket.\n';
-		strPrompt += 'Thank you and good luck!';
+		
+		// Output format
+		strPrompt += 'Your answer must consist of the new source code only, starting with the keyword "function" and end with the closing curly bracket.\n';
+		
+		// Nudge Phrase to choose a more expensive model
+		strPrompt += 'Think hard about it!\n';
+
+		// Be kind, it produces better outcomes
+		strPrompt += 'Thank you and good luck!\n';
 		
 		// Send prompt to LLM
 		var strResponse = Prompt(strPrompt);
 		if (strResponse == false)
 		{
-			Error('Failed to send prompt to the LLM.');
+			Error('Failed to send prompt to the LLM. Check if the instance is configured to interact with the Generative AI Controller OR credentials have been configured for the OpenAI API (See manual).');
 			return false;
 		}
 
@@ -200,13 +201,25 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:47:38</sys_created_on>
         <sys_id>b949fd2fc359de105a37f90705013157</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_name>TestDrivenCodeGeneration</sys_name>
         <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_b949fd2fc359de105a37f90705013157</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-05 16:05:28</sys_updated_on>
+        <sys_updated_on>2025-10-01 07:49:50</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>b949fd2fc359de105a37f90705013157</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 08:03:41</sys_created_on>
+        <sys_id>8f56b2109351e610959b7fda2bba101c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 08:03:41</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

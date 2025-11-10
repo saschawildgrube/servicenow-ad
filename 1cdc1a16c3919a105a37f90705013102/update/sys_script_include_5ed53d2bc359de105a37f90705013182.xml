@@ -6,7 +6,9 @@
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
         <description>Gets a system property of this application.</description>
+        <mobile_callable>false</mobile_callable>
         <name>AppGetProperty</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function AppGetProperty(strSuffix)
 {
 	return x_snc_devtools.GetProperty('x_snc_ad.'+strSuffix);
@@ -24,5 +26,6 @@
         <sys_update_name>sys_script_include_5ed53d2bc359de105a37f90705013182</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-10-23 09:30:56</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

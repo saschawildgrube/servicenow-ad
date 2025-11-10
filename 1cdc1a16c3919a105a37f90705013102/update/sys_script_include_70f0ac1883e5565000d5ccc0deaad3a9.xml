@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>The ArtificialDeveloperWorkerAPI class contains proxy functions to functions that do lengthy operations and hence may be executed through a process worker.</description>
+        <mobile_callable>false</mobile_callable>
         <name>ArtificialDeveloperWorkerAPI</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var ArtificialDeveloperWorkerAPI = Class.create();
 ArtificialDeveloperWorkerAPI.prototype = {
     initialize: function() {
@@ -31,5 +33,6 @@ ArtificialDeveloperWorkerAPI.prototype = {
         <sys_update_name>sys_script_include_70f0ac1883e5565000d5ccc0deaad3a9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2024-11-02 12:49:28</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

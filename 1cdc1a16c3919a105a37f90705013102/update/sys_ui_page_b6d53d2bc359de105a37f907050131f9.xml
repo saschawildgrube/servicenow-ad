@@ -20,6 +20,9 @@
 	<g2:no_escape>$[
 		docapi.RenderDescription();
 	]</g2:no_escape>
+
+	<h2>Table of Contents</h2>
+	<g2:no_escape>$[x_snc_devtools.HtmlRenderTableOfContents()]</g2:no_escape>		
 	
 	<h2>Test-Driven Code Generation</h2> 
 	<p>LLMs have made considerable progress since ChatGPT was made available to the public for the first time. And the quality of generated code improved greatly. But yet, the created code by far does not yet meet production standards and is not fit-for-purpose in many cases.</p>
@@ -56,7 +59,7 @@
 	<p>These are high complexity domain specific problems. Fit-for-purpose solutions are not available on public sources or are difficult to find due to varying terminology or context.</p>
 	<p>An example is to retrieve an API token from a ServiceNow connection alias and then to use it with a REST API that requires multiple requests to perform a task.</p>	
 
-	<p>As of now - at the time of the release of this application version - Test-Driven Code Generation using GTP4 works very well for class 1 problems, works most of the time for class 2 problems but fails on class 3 problems - although provides code that can serve as a basis for further manual work.</p>
+	<p>As of now - at the time of the release of this application version - Test-Driven Code Generation using GPT-5o works very well for class 1 problems, works most of the time for class 2 problems but does not always excel on class 3 problems - although provides code that can serve as a basis for further manual work.</p>
 	<p>As the Test-Driven Code generation approach requires developers to split capabilities into functions and produce automated tests, the efficiency gain for class 1 problems may be neglectable but for class 2 problems it can be significant. One could argue though that enforcing the refactoring of code into Script Include functions and creation of automated tests is per se a design pattern that saves costs on the long run. As a result, the adoption of TDG and hence indirectly adopting TDD already represents an efficiency gain - even if a particular problem cannot be fully solved through TDG.</p>
 	
 	
@@ -67,7 +70,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'Xanadu',
+				'Yokohama,Zurich',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -110,7 +113,7 @@
 		<li>Select "Create Connection and Credential" and add authentication credentials if not done already.</li>
 	</ol>
 
-	<h2>Configure ArtificalDeveloper with ChatGPT 4o using direct integration</h2>
+	<h2>Configure ArtificalDeveloper with ChatGPT 5 using direct integration</h2>
 	<ol>
 		<li>Navigate to the&#160;<a href="/nav_to.do?uri=sys_alias.do?sys_id=3b8dbc9983a6125000d5ccc0deaad33e" target="_blank">Artificial Developer OpenAI Credential Alias</a></li>
 		<li>Associate an existing or create a new "API Key Credential" for the OpenAI API to the alias.</li>
@@ -130,17 +133,32 @@
 	<h3>Script Includes</h3>
 	<g2:no_escape>$[docapi.RenderScriptIncludes()]</g2:no_escape>
 
-	<h3>Dependencies</h3>
+	<h2>Dependencies</h2>
 	<g2:no_escape>$[docapi.RenderDependencies()]</g2:no_escape>		
 
-	<h3>Technical Debts</h3>
-	<g2:no_escape>$[docapi.RenderTechnicalDebts()]</g2:no_escape>			
+	<h2>Technical Debt</h2>
+	<g2:no_escape>$[docapi.RenderTechnicalDebt()]</g2:no_escape>			
 	
 	<h2>License</h2>
 	<g2:no_escape>$[docapi.RenderCopyright(2024,'Sascha Wildgrube')]</g2:no_escape>
 	<g2:no_escape>$[docapi.RenderLicense()]</g2:no_escape>
 	
-	<h2>Release Notes</h2>
+	<h2 toc-ignore-children="true">Release Notes</h2>
+
+	<h3>1.3.0 - 2025-11-10</h3>
+	<ol>
+		<li>DevTools 1.133.0 is now required.</li>
+		<li>The ArtificialDeveloper is now fully tested with Yokohama and Zurich.</li>
+		<li>Xanadu is no longer actively supported.</li>
+		<li>ChatGPT 5 is now used by default.</li>
+		<li>Corrected typos in the prompt.</li>
+		<li>Now using x_snc_devtools.GetTestStepScript() function to retrieve the test script.The system property "atf_test_step_run_server_script_variable" has been removed as part of the refactoring.</li>
+		<li>Fixed ATF Tests "Installation" and "Implementation".</li>
+		<li>Added ACL to protect the ArtificialDeveloperClientAPI Script Include.</li>
+		<li>Added table of contents to manual.</li>
+		<li>Added log output to DevToolsPrompt() to help troubleshoot the direct integration with the OpenAI API.</li>
+	</ol>
+
 
 	<h3>1.2.0 - 2024-12-17</h3>
 	<ol>
@@ -179,13 +197,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-23 09:30:58</sys_created_on>
         <sys_id>b6d53d2bc359de105a37f907050131f9</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>64</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_ui_page_b6d53d2bc359de105a37f907050131f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-17 13:26:09</sys_updated_on>
+        <sys_updated_on>2025-11-10 16:15:54</sys_updated_on>
     </sys_ui_page>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>b6d53d2bc359de105a37f907050131f9</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-30 08:09:28</sys_created_on>
+        <sys_id>bba7fa509351e610959b7fda2bba10d9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-30 08:09:28</sys_updated_on>
+        <table>sys_ui_page</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

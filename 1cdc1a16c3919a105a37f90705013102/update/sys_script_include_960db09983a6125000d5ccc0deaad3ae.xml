@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description>The function sends a prompt to the OpenAI API (using the GTP4 model) and returns the answer as a string.</description>
+        <mobile_callable>false</mobile_callable>
         <name>DevToolsPrompt</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function DevToolsPrompt(strPrompt)
 {
 	var GetStringValue = x_snc_devtools.GetStringValue;
@@ -24,12 +26,14 @@
     var credential = GetCredentialFromAlias("x_snc_ad.OpenAI");
 	if (credential == false)
 	{
+		LogWarning('x_snc_ad.DevToolsPrompt: Could not identify credential from alias!');
 		return false;
 	}
 	var strToken = GetValue(credential,'apikey');
 
 	if (strToken == '')
 	{
+		LogWarning('x_snc_ad.DevToolsPrompt: API Key is empty!');
 		return false;
 	}
 
@@ -39,7 +43,7 @@
 			method: 'post',
 			requestbody: MakeJson(
 				{
-					model: 'gpt-4o',
+					model: 'gpt-5',
 					messages:
 						[
 							{
@@ -66,13 +70,14 @@
 	var response = HttpRequest(params);
 
 	var nHttpStatus = response.getStatusCode();
+	var strResponseBody = response.getBody();
     if (nHttpStatus != 200)
 	{
+		LogError('x_snc_ad.DevToolsPrompt: OpenAI API did not return HTTP 200!\n'+strResponseBody);
         return false;
     }
 
-    var strResponseBody = response.getBody();
-	var parsedResponse = ParseJson(strResponseBody);
+    var parsedResponse = ParseJson(strResponseBody);
 	var strAnswer = GetValue(parsedResponse,'choices',0,'message','content');
 	return strAnswer;
 }]]></script>
@@ -80,13 +85,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-12-17 08:56:25</sys_created_on>
         <sys_id>960db09983a6125000d5ccc0deaad3ae</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>DevToolsPrompt</sys_name>
         <sys_package display_value="ArtificialDeveloper" source="x_snc_ad">1cdc1a16c3919a105a37f90705013102</sys_package>
         <sys_policy/>
         <sys_scope display_value="ArtificialDeveloper">1cdc1a16c3919a105a37f90705013102</sys_scope>
         <sys_update_name>sys_script_include_960db09983a6125000d5ccc0deaad3ae</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-12-17 13:26:58</sys_updated_on>
+        <sys_updated_on>2025-11-10 15:31:59</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>
