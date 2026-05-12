@@ -4,6 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>A user that can get support from the artifical developer.</description>
         <elevated_privilege>false</elevated_privilege>
+        <federated_id>hYYzDpEGAvn7yC/G+U0FI4lbc5zVZ0KZcU+ZYj3WKsc=</federated_id>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_snc_ad.developer</name>
